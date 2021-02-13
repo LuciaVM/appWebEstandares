@@ -134,32 +134,32 @@ $mongo = new Mongo($lucia);
             <form name="formulario" method="POST" enctype="multipart/form-data">
                 <table>
                     <tr><td><pre><b> Nombre </b></pre></td>
-                        <td><input type = "text" name = "nombreMedico"></td>
+                        <td><input type = "text" name = "nombreMedico" size="50"></td>
                     </tr>
                     
                     <tr><td><pre><b> Apellidos </b></pre></td>
-                        <td><input type = "text" name = "apellidosMedico"></td>
+                        <td><input type = "text" name = "apellidosMedico" size="50"></td>
                     </tr>
                     <tr><td><pre><b> DNI </b></pre></td>
-                        <td><input type = "text" name = "dniMedico"></td>
+                        <td><input type = "text" name = "dniMedico" size="50"></td>
                     </tr>
                     <tr><td><pre><b> Número de la seguridad social </b></pre></td>
-                        <td><input type = "text" name = "nssMedico"></td>
+                        <td><input type = "text" name = "nssMedico" size="50"></td>
                     </tr>
                     <tr><td><pre><b> Dirección </b></pre></td>
-                        <td><input type = "text" name = "direccionMedico"></td>
+                        <td><input type = "text" name = "direccionMedico" size="50"></td>
                     </tr>
                     <tr><td><pre><b> Teléfono </b></pre></td>
-                        <td><input type = "text" name = "telefonoMedico"></td>
+                        <td><input type = "text" name = "telefonoMedico" size="50"></td>
                     </tr>
                     <tr><td><pre><b> Email </b></pre></td>
-                        <td><input type = "email" name = "emailMedico"></td>
+                        <td><input type = "email" name = "emailMedico" size="50"></td>
                     </tr>
                     <tr><td><pre><b> Lugar de nacimiento </b></pre></td>
-                        <td><input type = "text" name = "lugarNacMedico"></td>
+                        <td><input type = "text" name = "lugarNacMedico" size="50"></td>
                     </tr>
                     <tr><td><pre><b> Fecha de nacimiento </b></pre></td>
-                        <td><input type = "date" name = "fechaNacMedico"></td>
+                        <td><input type = "date" name = "fechaNacMedico" size="50"></td>
                     </tr>
                     <tr><td><pre><b> Fecha de inicio del contrato </b></pre></td>
                         <td><input type = "date" name = "fechaInicioContrMedico"></td>
@@ -171,10 +171,10 @@ $mongo = new Mongo($lucia);
                     </tr>
                     
                     <tr><td><pre><b> Contraseña del médico </b></pre></td>
-                        <td><input type = "password" name = "passwordMedico"></td>
+                        <td><input type = "password" name = "passwordMedico" size="50"></td>
                     </tr>
                     <tr><td><pre><b> Confirmación contraseña del médico </b></pre></td>
-                        <td><input type = "password" name = "passwordMedicoConf"></td>
+                        <td><input type = "password" name = "passwordMedicoConf" size="50"></td>
                     </tr>
                     <tr>
                         <td id = "filaBotonesRespuesta" colspan="2">
