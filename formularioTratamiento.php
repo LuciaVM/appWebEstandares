@@ -11,74 +11,26 @@
     $mongo = new Mongo($clara);
     $collectionPacientes = $mongo->ScAid->Patients;
     $collectionTreatments = $mongo->ScAid->Treatments;
+    $collectionBraces = $mongo->ScAid->Braces;
+    $collectionTecnicians = $mongo->ScAid->Tecnicians;
 ?>
 <!DOCTYPE html>
 <html>
-    <!-- <script>
+    <script>
         function validaTratamiento(){
-            date = document.formSeguimiento.fecha.value;
+            date = document.formSeguimiento.fechaIni.value;
                 if (date == ""){
-                    alert("Debes completar la fecha");
+                    alert("Debes completar la fecha de inicio");
                     return false;
                 }
-            sala = document.formSeguimiento.sala.value;
-                if (sala == ""){
-                    alert("Debes completar la sala");
+            desc = document.formSeguimiento.desc.value;
+                if (desc == ""){
+                    alert("Debes completar la descripción");
                     return false;
                 }
-            hora = document.formSeguimiento.hora.value;
-                if (hora == ""){
-                    alert("Debes completar la hora");
-                    return false;
-                }
-            desv = document.formSeguimiento.desv.value;
-                if (desv == ""){
-                    alert("Debes completar el grado de desviación");
-                    return false;
-                }
-            curv = document.formSeguimiento.curv.value;
-                if (curv == ""){
-                    alert("Debes completar el patrón de la curvatura");
-                    return false;
-                }
-            loc = document.formSeguimiento.loc.value;
-                if (loc == ""){
-                    alert("Debes completar la localización de la curvatura");
-                    return false;
-                }
-            obs = document.formSeguimiento.obs.value;
-                if (obs == ""){
-                    alert("Debes completar las observaciones");
-                    return false;
-                }
-            alt = document.formSeguimiento.alt.value;
-                if (alt == ""){
-                    alert("Debes completar la altura");
-                    return false;
-                }
-            peso = document.formSeguimiento.peso.value;
-                if (peso == ""){
-                    alert("Debes completar el peso");
-                    return false;
-                }
-            neur = document.formSeguimiento.neur.value;
-                if (neur == ""){
-                    alert("Debes completar los datos sobre los test neurológicos");
-                    return false;
-                }
-            pres = document.formSeguimiento.pres.value;
-                if (pres == ""){
-                    alert("Debes completar la presión sanguínea");
-                    return false;
-                }
-
-            if(!document.formSeguimiento.datos.checked){
-                alert("Debe aceptar el tratamiento de datos");
-                return false;
-            }
             return true;
         }
-    </script> -->
+    </script>
     <head>
         <meta charset="utf-8">
         <title>Registro de Seguimiento</title>
@@ -155,8 +107,33 @@
                             'Type' => $tratamiento,
                             'Description' => $desc,
                             'Patient_DNI' => $dniPac
-                            ] );
-                        echo $fechaFin;
+                        ] );
+                        
+                        
+                        if($tratamiento=="Corsé"){
+                            $numCorses = count($collectionBraces->find()->toArray());
+                            $idCorse=$numCorses + 1;
+
+                            $tecnicos = $collectionTecnicians->find()->toArray();
+                            $numTec = count($tecnicos) - 1;
+                            
+                            $eleg = rand(1, $numTec);
+                            $dniTec = $tecnicos[$eleg]['DNI'];
+
+                            $collectionBraces -> insertOne( [ 
+                                'idCorset' => $idCorse,
+                                'Technician_DNI' => $dniTec,
+                                'Patient_DNI' => $dniPac,
+                                'Type' => "",
+                                'Material' => "",
+                                'Description' => "",
+                                'Measures' => array(
+                                    "Hip_measure" => "",
+                                    "Waist_measure" => "",
+                                    "Thorax_measure" => ""
+                                )
+                                ] );
+                        }
                         echo "Inserted with Object ID '{$resultado->getInsertedId()}'"; //quitar cuando se termine
                     }
                 ?>
