@@ -72,7 +72,7 @@ p {
     font-family: Oswald;
     font-size: 20px;
     margin: 4px;
-    right:250px;
+    right:160px;
     top: 30px;
     text-decoration: none;
   }
@@ -365,6 +365,26 @@ a{
   position: absolute;
   text-align: left;
   font-size: 20px;
+}
+.tablaPerfilSeguimiento{
+  width: 1000px;
+  text-align: left;
+  background-color:#447c9b;
+  border-collapse: separate;
+  position: absolute;
+  left: 200px;
+  
+}
+.tablaPerfilSeguimiento th{
+  background-color: #1d3556;
+  color: #f3faed;
+  font-size: 14px;
+  width: 30%;
+}
+.tablaPerfilSeguimiento td{
+  background-color: #f3faed;
+  border-bottom: #1d3556;
+  width: 70%;
 }
 .divTablaPerfilConsulta{
   margin: 4px;
