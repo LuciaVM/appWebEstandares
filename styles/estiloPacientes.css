@@ -1,0 +1,511 @@
+p {
+  margin: 0px;
+}
+h1 {
+  margin: 0px;
+  color: #1d3556;
+}
+h2 {
+  margin: 0px;
+  color: #1d3556;
+}
+h3 {
+  margin: 0px;
+  color: #1d3556;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+body {
+  background-color: #abdbdb;
+  font-family: Oswald, "Open Sans", Arial, sans-serif;
+  font-size: 12pt;
+  margin: 0px;
+}
+.gwd-div-lm07 {
+  color: black;
+  padding: 0.5em 3em;
+  align-items: center;
+  display: flex;
+  height: 120px;
+  position: absolute;
+  background-image: none;
+  background-color: #1d3556;
+  border-image-source: none;
+  border-image-width: 1;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-color: transparent;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+.gwd-img-fa6j {
+  position: absolute;
+  height: 18%;
+  width: 113.45px;
+  top: -9px;
+  left: 20px;
+}
+.gwd-p-gv4z {
+  position: absolute;
+  width: 180px;
+  height: 38px;
+  font-family: Oswald;
+  font-size: 20px;
+  margin: 4px;
+  right:540px;
+  top: 30px;
+  text-decoration: none;
+}
+
+.gwd-p-1qhn {
+  width: 220px;
+  right: 305px;
+}
+
+.gwd-p-5vs1 {
+  width: 165px;
+  right: 120px;
+}
+.salir{
+  transform-origin: 50% 50% 0px;
+  width: 80px;
+  right: 20px;
+}
+
+.area{
+  position: absolute;
+  height: 20em;
+  width: 30%;
+  top: 0px;
+  left: 180px;
+  color: #f3faed;
+  font-size: 25px;
+}
+
+.destacado {
+  width: 222px;
+  transform-origin: 50% 50% 0px;
+  top: 20px;
+  left: 910px;
+}
+header nav#menu-superior {
+  position: absolute;
+  right: 0px;
+  top: 3em;
+  margin-right: 2em;
+}
+
+nav#menu-superior ul li {
+  display: inline-block;
+  background-color:#e13c44;
+  color:#abdbdb;
+}
+
+nav#menu-superior ul li:hover {
+  display: inline;
+  float: left;
+  background-color:#abdbdb;
+}
+
+nav#menu-superior ul li:hover {
+  display: inline;
+  float: left;
+  background-color:#447c9b;
+}
+nav#menu-superior ul li a:hover {
+  padding: 1em;
+  color:#f3faed;
+  text-decoration: underline;
+
+}
+nav#menu-superior ul li a {
+  padding: 1em;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+#respuesta{
+  background-color: #028090;
+  color: #f3faed;
+}
+#archivo{
+  background-color: #abdbdb;
+}
+
+#tituloHacerConsulta{
+  margin: 4px;
+  left: 150px;
+  top: 20px;
+  width: 800px;
+  height: 100px;
+  position: absolute;
+  text-align: left;
+  font-size: 25px;
+}
+
+#seleccionarConsulta{
+  margin: 4px;
+  left: 150px;
+  top: 170px;
+  width: 800px;
+  height: 100px;
+  position: absolute;
+  text-align: center;
+}
+
+#pintarFormularios{
+  margin: 4px;
+  left: -5px;
+  top: 120px;
+  width: 800px;
+  height: 100px;
+  position: absolute;
+  text-align: left;
+  
+}
+
+#tablaSeleccionarConsulta{
+  display: table;
+  width: 100%;
+  text-align: center;
+  caption-side: top;
+  background-color: #028090;
+  border-collapse: collapse;
+  color: #f3faed;
+  font-size: 20px;
+}
+.selectorTipoForm{
+  background-color: #f3faed;
+  color:#1d3556;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#filaVacia{
+  background-color: #abdbdb;
+  
+}
+.tituloForm{
+  color:#1d3556;
+  font-weight: bold;
+  font-family: Oswald, "Open Sans", Arial, sans-serif;
+  font-size: 20pt;
+
+}
+.form {
+  background-color: #abdbdb;
+  font-family: Oswald, "Open Sans", Arial, sans-serif;
+  font-size: 12pt;
+  font-family: Oswald;
+  margin: 4px;
+  left: 10px;
+  top: 20%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  text-align: left;
+}
+/* 
+#formCOVID{
+  visibility:hidden;
+} */
+
+.botonForm{
+  background-color: #028090;
+  color: #f3faed;
+  font-weight: bold;
+  font-size:15px;
+}
+
+#contenedor { 
+  margin: 0 auto; 
+  width: 80%; 
+  padding: 0 1em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.contenedor {
+  padding: 7em;
+}
+.contenedor::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+
+#tituloPerfilPaciente{
+  margin: 4px;
+  left: 115px;
+  top: 140px;
+  width: 800px;
+  height: 100px;
+  position: absolute;
+  text-align: left;
+  font-size: 20px;
+}
+.divTablaPerfilPac{
+  margin: 4px;
+  left: 115px;
+  top: 240px;
+  width: 1000px;
+  height: 100px;
+  position: absolute;
+  text-align: left;
+  font-size: 25px;
+}
+
+.tablaPerfil td {
+  padding: 10px;
+  border-bottom: transparent;
+  width: 400px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #f3faed;
+}
+
+.tablaPerfil th{
+  background-color: #028090;
+  color: #f3faed;
+  width: 400px;
+}
+
+.tablaPerfil a{
+  color:black;
+  text-decoration: none;
+}
+
+#tituloPerfilConsultaPac{
+  margin: 4px;
+  left: 115px;
+  top: 150px;
+  width: 800px;
+  height: 100px;
+  position: absolute;
+  text-align: left;
+  font-size: 20px;
+}
+.divTablaPerfilConsulta{
+  margin: 4px;
+  left: 115px;
+  top: 240px;
+  width: 1000px;
+  height: 100px;
+  position: absolute;
+  text-align: left;
+  font-size: 25px;
+}
+
+.perfilConsulta td {
+  padding: 10px;
+  border-bottom: transparent;
+  width: 400px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #f3faed;
+}
+
+.perfilConsulta th{
+  background-color: #028090;
+  color: #f3faed;
+  width: 400px;
+}
+
+.perfilConsulta a{
+  color:black;
+  text-decoration: none;
+}
+
+
+
+.Listado_consultas_paciente {
+  margin: 20px;
+  left: 75px;
+  top: 20%;
+  width: 90%;
+  height: 100px;
+  position: absolute;
+
+}
+.Listado_tratamientos_paciente {
+  top: 150px;
+  width: 100%;
+  height: 10px;
+  left: 50px;
+  position: absolute;
+  text-decoration: none;
+}
+
+.perfil_paciente {
+  top: 150px;
+  width: 100%;
+  height: 10px;
+  left: 50px;
+  position: absolute;
+  text-decoration: none;
+}
+
+.tablaListadoTratamientosPaciente {
+  width: 90%;
+  text-align: left;
+  caption-side: top;
+  background-color: #f3faed;
+  border-collapse: collapse;
+}
+
+.tablaListadoTratamientosPaciente th {
+  padding: 10px;
+  border-bottom: 10px solid #abdbdb;
+  width: 25%;
+  text-decoration: none;
+}
+.tablaListadoTratamientosPaciente td {
+  padding: 10px;
+  border-bottom: 10px solid #abdbdb;
+  width: 25%;
+  text-decoration: none;
+}
+
+.tablaListadoTratamientosPaciente a{
+  text-decoration: none;
+  color:black;
+}
+
+.tablaListadoTratamientosPaciente th{
+  background-color: #1d3556;
+  color: #f3faed;
+}
+.tablaListadoTratamientosPaciente tr:hover{
+  color:#f3faed;
+  background-color:#447c9b;
+  
+}
+
+.tablaListadoSeguimientosPaciente {
+  width: 90%;
+  text-align: left;
+  caption-side: top;
+  background-color: #f3faed;
+  border-collapse: collapse;
+}
+.tablaListadoSeguimientosPaciente th {
+  padding: 10px;
+  border-bottom: 10px solid #abdbdb;
+  width: 25%;
+  text-decoration: none;
+}
+.tablaListadoSeguimientosPaciente td {
+  padding: 10px;
+  border-bottom: 10px solid #abdbdb;
+  width: 25%;
+  text-decoration: none;
+}
+
+.tablaListadoSeguimientosPaciente a{
+  text-decoration: none;
+  color:black;
+}
+
+.tablaListadoSeguimientosPaciente th{
+  background-color: #1d3556;
+  color: #f3faed;
+}
+.tablaListadoSeguimientosPaciente tr:hover{
+  color:#f3faed;
+  background-color:#447c9b;
+  
+}
+
+.tablaListadoCorsetPaciente {
+  width: 90%;
+  text-align: left;
+  caption-side: top;
+  background-color: #f3faed;
+  border-collapse: collapse;
+}
+
+.tablaListadoCorsetPaciente th {
+  padding: 10px;
+  border-bottom: 10px solid #abdbdb;
+  width: 25%;
+  text-decoration: none;
+}
+.tablaListadoCorsetPaciente td {
+  padding: 10px;
+  border-bottom: 10px solid #abdbdb;
+  width: 25%;
+  text-decoration: none;
+}
+
+
+.tablaListadoCorsetPaciente a{
+  text-decoration: none;
+  color:black;
+}
+
+.tablaListadoCorsetPaciente th{
+  background-color: #1d3556;
+  color: #f3faed;
+}
+
+
+.botonDetalles{
+  color:#f3faed;
+  background-color: #1d3556;
+  font-weight: bold;
+}
+.botonDetalles:hover{
+  color:#1d3556;
+  background-color: #f3faed;
+  font-weight: bold;
+}
+
+.tablaPerfilTratamiento{
+  width: 60%;
+  text-align: left;
+  background-color:#abdbdb;
+  border-collapse: separate;
+  position: absolute;
+  left: 70px;
+  top: 80px;
+}
+.tablaPerfilTratamiento th{
+  background-color:#1d3556;
+  color: #f3faed;
+  padding: 10px;
+}
+.tablaPerfilTratamiento td{
+  background-color:#f3faed;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+.tablaPerfilPaciente{
+  width: 60%;
+  text-align: left;
+  background-color:#abdbdb;
+  border-collapse: separate;
+  position: absolute;
+  left: 70px;
+  top: 80px;
+}
+.tablaPerfilPaciente th{
+  background-color:#1d3556;
+  color: #f3faed;
+  padding: 10px;
+}
+.tablaPerfilPaciente td{
+  background-color:#f3faed;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: left;
+
+}
