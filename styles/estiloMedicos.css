@@ -176,19 +176,29 @@ p {
   text-decoration: none;
 
 }
-.listado_consultas_med{
-  top: 14em;
-  width: 100%;
-  height: 100px;
-  text-decoration: none;
-}
-.Perfil_paciente {
+
+.DesplegablesPefilPaciente{
   margin: 20px;
   left: 35px;
   top: 20%;
   width: 100%;
   height: 100px;
   position: absolute;
+  display:flex;
+}
+
+.Perfil_paciente {
+  position: static;
+  display: block;
+  margin: 20px;
+  left: 35px;
+  width: 100%;
+  min-height: 300px;
+}
+
+.listado_consultas_med{
+  position:static;
+  text-decoration: none;
 }
 
 .Listado_pacientes_medico {
@@ -247,6 +257,8 @@ p {
   text-align: left;
   caption-side: top;
   background-color: #f3faed;
+  position:absolute;
+  top: 80px;
   border-collapse: collapse;
 }
 .tablaListadoConsultasMedico th, td {
