@@ -66,9 +66,32 @@
   <img src="assets/logo.png" class="gwd-img-fa6j">
   <h4 class = "area" >Área de médico administrador</h4>
   <nav id="menu-superior">
-    <ul>
-      <li class="gwd-p-gv4z"><a href='seleccionarRol.php?idMed=<?php echo $idMed?>'>Seleccionar Rol</a></li>
-      <li class="gwd-p-gv4z gwd-p-1qhn "><a href="login.php">Salir</a></li>
+    <ul>      
+                <li class="gwd-p-gv4z areaListaPac">
+                    <form action="seleccionarRol.php" method = "post">
+                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input class = "botonListaPacientes" type="submit" value="Seleccionar Rol" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z areaMedicos" >
+                    <form action="listaMedicosMedicoJefe.php" method = "post">
+                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input class = "botonMedicos" type="submit" value="Lista de Médicos" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z areaRegistrar">
+                    <form action="formularioRegistrarMedico.php" method = "post">
+                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input class = "botonRegistrar" type="submit" value="Registrar Médico" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z areaSalir">
+                    <form action="login.php" method = "post">
+                            <!-- <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="dniPac" value= <?php $seguimiento['Patient_DNI'] ?>> -->
+                            <input class = "botonSalir" type="submit" value="Salir" >
+                    </form>   
+                </li>
     </ul>
   </nav>
 </body>
