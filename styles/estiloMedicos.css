@@ -520,15 +520,13 @@ a{
   background-color: #1d3556;
   color:#f3faed;
   font-size: 14px;
-  position: absolute;
-  left: -5px;
-  top: 15px;
+  left:20%;
+
 }
 #botonDesplegablePaciente:hover{
   background-color: #447c9b;
   color:#f3faed;
   font-size: 14px;
-  position: absolute;
   left: -5px;
 }
 #filaBotonesForm{
@@ -536,3 +534,54 @@ a{
   border:none;
   text-align: center;
 }
+
+.divPrincipalPerfilPac{
+  position:absolute;
+  top: 200px;
+}
+.tablasPerfilPaciente{
+  display: none;
+  width: 1000px;
+  border:collapse;
+}
+.tablasPerfilPaciente th{
+  background-color: #1d3556;
+  color: #f3faed;
+  padding: 5px;
+  border-bottom: 10px solid #abdbdb;
+  width: 40%;
+}
+.tablasPerfilPaciente td{
+  background-color: #f3faed;
+  color: #1d3556;
+  border-bottom: 10px solid #abdbdb;
+}
+.divInteriorPerfilPac{
+  padding-left: 300px;
+}
+
+#mostrarEstaTabla{
+  display:table;
+}
+#tablaPerfilPaciente{
+  display:table;
+}
+
+.divBotonEditar{
+  align-content: flex-end;
+}
+#filaBotonesCrearPac{
+  background-color: #abdbdb;
+  text-align: center;
+}
+.botonEditarPaciente{
+  background-color: #e13c44;
+  color:#f3faed;
+  font-size: 20px;
+}
+.botonEditarPaciente:hover{
+  background-color: #447c9b;
+  color:#f3faed;
+  font-size: 20px;
+}
+
