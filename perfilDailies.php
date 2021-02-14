@@ -6,9 +6,10 @@
     use MongoDB\Client as Mongo;
     $mongo = new Mongo($clara);
 
-    // $idSeg = isset($_POST['idSeg']) ? $_POST['idSeg'] : null;
+    $idDaily = isset($_POST['idDaily']) ? $_POST['idDaily'] : null;
+    $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
 
-    $idDaily = "5fc96ed1b681852b5c611d7a";
+    //$idDaily = "5fc96ed1b681852b5c611d7a";
     
     // $item = $collection->findOne(array(
     //     '_id' => new MongoId('4e49fd8269fd873c0a000000')));
@@ -21,6 +22,7 @@
     $seguimiento = $collectionDailies->findOne([
         '_id' => new MongoDB\BSON\ObjectId($idDaily),
     ]);
+
     
     // $restaurant = $database->restaurants->findOne([
     //     '_id' => new MongoDB\BSON\ObjectId('594d5ef280a846852a4b3f70'),

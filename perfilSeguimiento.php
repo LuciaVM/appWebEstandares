@@ -6,10 +6,10 @@
     use MongoDB\Client as Mongo;
     $mongo = new Mongo($clara);
 
-    // $idSeg = isset($_POST['idSeg']) ? $_POST['idSeg'] : null;
-    $idSeg = "5fc96e60b681852b5c6118c5";
+    $idSeg = isset($_POST['idSeg']) ? $_POST['idSeg'] : null;
+    //$idSeg = "5fc96e60b681852b5c6118c5";
 
-    // $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
+    $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
 
     
     // $item = $collection->findOne(array(
@@ -34,7 +34,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Perfil de Informe de seguimiento</title>
+        <title>Perfil de la consulta</title>
         <meta name="generator" content="Google Web Designer 10.0.2.0105">
         <link href="styles/estiloMedicos.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700" rel="stylesheet" type="text/css"> 
@@ -62,7 +62,7 @@
         </nav>
 
         <div class="div_medico">
-            <h1> Perfil del Seguimiento</h1>
+            <h1> Perfil de la consulta</h1>
             <br>  </br>
             <table class = "tablaPerfilSeguimiento">
                 <tbody>

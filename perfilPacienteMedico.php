@@ -5,8 +5,8 @@
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($lucia);
 
-  $dniMedico = "42745921-f";
-  $dniPac = "54564359-w";
+  $dniMed = isset($_POST['dniMedico']) ? $_POST['dniMedico'] : null;
+  $dniPac =  isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
 ?>
 
 <html>
@@ -42,17 +42,23 @@
             tablaPaciente.style.display = "none";
         }   
       }
-
+      
       function ocultarMostrarTratamientos(){
         tablaPaciente = document.getElementById("tablaListaTratamientos");
         
+        tablaTitulo = document.getElementById("tablaTituloCorse");
+        tablaCorse = document.getElementById("tablaCorse");
         tipoDisplay = getComputedStyle(tablaPaciente, null).display;
         if (tipoDisplay == "none") {
           tablaPaciente.style.display = "table";
+          tablaTitulo.style.display = "table";
+          tablaCorse.style.display = "table";
 
          }   
         else {
             tablaPaciente.style.display = "none";
+            tablaTitulo.style.display = "none";
+            tablaCorse.style.display = "none";
         }   
       }
 
@@ -94,16 +100,16 @@
             </ul>
     </nav>
 
-<div class = "DesplegablesPefilPaciente">
-    <div class = "Perfil_paciente">
-      <button id = "botonDesplegablePaciente" type="button" onclick="ocultarMostrarPaciente()"> Desplegar datos del paciente </button>
-      <table class = "tablaPerfilPaciente" id="noTocar">
+<div class = "divPrincipalPerfilPac">
+    <div class = "divInteriorPerfilPac">
+      <button id = "botonDesplegablePaciente" type="button" onclick="ocultarMostrarPaciente()"> Desplegar/Ocultar datos del paciente </button>
+      <table id = "mostrarEstaTabla" class="tablasPerfilPaciente">
         <tr>
             <th id = "filaTitulo" colspan = "2">Datos del paciente</th>
         </tr>
       </table>
 
-      <table class = "tablaPerfilPaciente2" id ="tablaPerfilPaciente">
+      <table class="tablasPerfilPaciente" id ="tablaPerfilPaciente">
         <?php 
         $collection1 = $mongo->ScAid->Patients;
         $patient = $collection1->find(['DNI' => $dniPac]) ->toArray();
@@ -157,19 +163,28 @@
                     <li> Teléfono: '.$patient[0]['Emergency_contact']['Phone'].'</li>
                 <ul>
             </td>
+            <tr> 
+                 <td id = "filaBotonesCrearPac" colspan = "2"> 
+                     <form action="formularioEditarPaciente.php" method = "post"> 
+                         <input type="hidden" name="dniMed" value= <?php $dniMed?> 
+                         <input type="hidden" name="idPac" value= <?php $dniPac ?> 
+                         <input class = "botonEditarPaciente" type="submit" value="Editar datos del paciente" />
+                     </form>
+                 </td>
+            </tr>
         </tr>';
          ?>
         </table>
     </div>
-    <div>
+    <div class = "divInteriorPerfilPac">
         <br> </br>
-        <button id = "botonDesplegableConsulta" type="button" onclick="ocultarMostrarConsultas()"> Desplegar listado de consultas </button>
-        <table class = "tablaPerfilPaciente3" id="noTocar">
+        <button id = "botonDesplegablePaciente" type="button" onclick="ocultarMostrarConsultas()"> Desplegar/Ocultar consultas </button>
+        <table class="tablasPerfilPaciente" id = "mostrarEstaTabla">
         <tr>
-            <th id = "filaTitulo" colspan = "2">Listado de las consultas</th>
+            <th id = "filaTitulo" colspan = "4">Listado de las consultas</th>
         </tr>
         </table>
-        <table class = "tablaPerfilPaciente" id ="tablaListaConsultas">
+        <table class="tablasPerfilPaciente" id ="tablaListaConsultas">
             <tr>
                 <th> Fecha </th>
                 <th> Hora </th>
@@ -188,9 +203,9 @@
                        <td>'.$consultation['Hour'].'</td>
                        <td>'.$consultation['Room'].'</td>
                        <td>
-                         <form action="formularioRegistrarMedico.php" method = "post">
-                           <input type="hidden" name="medicoDNI" value= '.$dniMedico.'>
-                           <input type="hidden" name="idConsultation" value= '.$consultation['idConsultation'].'>
+                         <form action="perfilSeguimiento.php" method = "post">
+                           <input type="hidden" name="dniMed" value= '.$dniMed.'>
+                           <input type="hidden" name="idSeg" value= '.$consultation['_id'].'>
                            <input class = "botonDetalles" type="submit" value="Detalles" />
                          </form>
                        </td>
@@ -203,15 +218,15 @@
 
         </table>
     </div>
-    <div class = "listado_tratamientos_med">
+    <div class = "divInteriorPerfilPac">
         <br> </br>
-        <button id = "botonDesplegableConsultas" type="button" onclick="ocultarMostrarTratamientos()"> Desplegar listado de tratamientos </button>
-        <table class = "tablaPerfilPaciente3" id="noTocar">
+        <button id = "botonDesplegablePaciente" type="button" onclick="ocultarMostrarTratamientos()"> Desplegar/Ocultar tratamientos </button>
+        <table class="tablasPerfilPaciente" id = "mostrarEstaTabla">
             <tr>
-                <th id = "filaTitulo" colspan = "2">Listado de los tratamientos</th>
+                <th id = "filaTitulo" colspan = "4">Listado de los tratamientos</th>
             </tr>
         </table>
-        <table class = "tablaPerfilPaciente4" id ="tablaListaTratamientos">
+        <table class="tablasPerfilPaciente" id ="tablaListaTratamientos">
             <tr>
                 <th> Fecha de inicio </th>
                 <th> Fecha de fin </th>
@@ -230,9 +245,9 @@
                        <td>'.$treatment['Date_end'].'</td>
                        <td>'.$treatment['Type'].'</td>
                        <td>
-                         <form action="formularioRegistrarMedico.php" method = "post">
-                           <input type="hidden" name="medicoDNI" value= '.$dniMedico.'>
-                           <input type="hidden" name="idTreatment" value= '.$treatment['idTreatment'].'>
+                         <form action="perfilTratamientoMedico.php" method = "post">
+                           <input type="hidden" name="dniMed" value= '.$dniMed.'>
+                           <input type="hidden" name="idTret" value= '.$treatment['_id'].'>
                            <input class = "botonDetalles" type="submit" value="Detalles" />
                          </form>
                        </td>
@@ -242,18 +257,56 @@
                 echo '<tr><td colspan = "4">No hay resultados</td></tr>';
                }
                ?>
+        </table>
+        <table class="tablasPerfilPaciente" id = "tablaTituloCorse">
+            <tr>
+                <th id = "filaTitulo" colspan = "4">Listado de corsets</th>
+            </tr>
+        </table >
+        <table class="tablasPerfilPaciente" id = "tablaCorse">
+            <tr>
+                <th> Tipo </th>
+                <th> Material </th>
+                <th> Medidas </th>
+                <th> Descripción </th>
+            </tr>
+        <?php
+             
+             $collection5 = $mongo->ScAid->Braces;
+             $result = $collection5->find(['Patient_DNI' => $dniPac])->toArray();
+             foreach ($result as $brace) {
+                 echo '
+                   <tr>
+                       <td>'.$brace['Type'].'</td>
+                       <td>'.$brace['Material'].'</td>
+                       <td>
+                       <ul>
+                       <li> Cadera: '.$brace['Measures']['Hip_measure'].'</li>
+                       <li> Cintura: '.$brace['Measures']['Waist_measure'].'</li>
+                       <li> Torax: '.$brace['Measures']['Thorax_measure'].'</li>
+                       <ul>
+                       </td>
+                       <td>'.$brace['Description'].'</td>
+                   </tr>';
+
+               }
+               if(count($result) == 0){
+                echo '<tr><td colspan = "4">No hay resultados</td></tr>';
+               }
+
+               ?>
 
         </table>
     </div>
-    <div class = "listado_seguimientoDiario_med">
+    <div class = "divInteriorPerfilPac">
         <br> </br>
-        <button id = "botonDesplegableSeguimiento" type="button" onclick="ocultarMostrarSeguimiento()"> Desplegar listado de tratamientos </button>
-        <table class = "tablaPerfilPaciente3" id="noTocar">
+        <button id = "botonDesplegablePaciente" type="button" onclick="ocultarMostrarSeguimiento()"> Desplegar/Ocultar seguimientos diarios </button>
+        <table class="tablasPerfilPaciente" id = "mostrarEstaTabla">
             <tr>
-                <th id = "filaTitulo" colspan = "2">Listado de los datos de seguimiento diario</th>
+                <th id = "filaTitulo" colspan = "3">Listado de los datos de seguimiento diario</th>
             </tr>
         </table>
-        <table class = "tablaPerfilPaciente4" id ="tablaListaSeguimientos">
+        <table class="tablasPerfilPaciente" id ="tablaListaSeguimientos">
             <tr>
                 <th> ID </th>
                 <th> Fecha </th>
@@ -262,7 +315,9 @@
         <?php
              
              $collection4 = $mongo->ScAid->Dailies;
-             $result = $collection4->find(['Patient_DNI' => $dniPac])->toArray();
+             $result = $collection4->find(['Patient_DNI ' => $dniPac])->toArray();
+
+             
 
              foreach ($result as $daily) {
                  echo '
@@ -270,9 +325,9 @@
                        <td>'.$daily['idDaily_monitoring'].'</td>
                        <td>'.$daily['Date'].'</td>
                        <td>
-                         <form action="formularioRegistrarMedico.php" method = "post">
-                           <input type="hidden" name="medicoDNI" value= '.$dniMedico.'>
-                           <input type="hidden" name="idTreatment" value= '.$daily['idDaily_monitoring'].'>
+                         <form action="perfilDailies.php" method = "post">
+                           <input type="hidden" name="dniMed" value= '.$dniMed.'>
+                           <input type="hidden" name="idDaily" value= '.$daily['_id'].'>
                            <input class = "botonDetalles" type="submit" value="Detalles" />
                          </form>
                        </td>
@@ -287,8 +342,6 @@
     </div>
 </div>
 
-  
-  
 
 </body>
 

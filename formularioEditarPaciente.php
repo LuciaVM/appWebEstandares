@@ -3,11 +3,8 @@
     $clara = "mongodb+srv://clarajv:zZVQaRtyyRJad99k@cluster0.wnp1l.mongodb.net/test?authSource=admin&replicaSet=atlas-mwie0e-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
     require 'vendor/autoload.php';
 
-    // $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
-    // $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
-    $dniMed = "39837410-K";
-    $dniPac = "10708168-S";
-    $dniPac = 77;
+    $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
+    $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
     use MongoDB\Client as Mongo;
 
     // determinar donde estamos buscando

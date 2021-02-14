@@ -3,7 +3,7 @@
   require 'vendor/autoload.php';
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($lucia);
-  $idTreatment = isset($_POST['idTreatment']) ? $_POST['idTreatment'] : null;
+  $idTreatment = isset($_POST['idTret']) ? $_POST['idTret'] : null;
   $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
 
 

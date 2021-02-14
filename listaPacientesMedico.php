@@ -71,7 +71,7 @@
                         <td>'.$paciente['Name'].'</td>
                         <td>'.$paciente['Surname'].'</td>
                         <td>
-                          <form action="formularioRegistrarMedico.php" method = "post">
+                          <form action="perfilPacienteMedico.php" method = "post">
                             <input type="hidden" name="medicoDNI" value= '.$dniMedico.'>
                             <input type="hidden" name="dniPac" value= '.$paciente['DNI'].'>
                             <input class = "botonDetalles" type="submit" value="Detalles" />
