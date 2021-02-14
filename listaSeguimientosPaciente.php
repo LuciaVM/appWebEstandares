@@ -37,6 +37,10 @@
 
     <h1>Listado de seguimientos diarios</h1>
     <br> </br>
+    <form action="formularioDailies.php" method = "post">
+        <input type="hidden" name="dniPac" value= <?php $dniPac?>>
+        <input class = "botonCrearSegu" type="submit" value="Nuevo seguimiento" />
+    </form>
     <div>
     <table class = "tablaListadoSeguimientosPaciente">
             <tr>

@@ -3,8 +3,7 @@
     $clara = "mongodb+srv://clarajv:zZVQaRtyyRJad99k@cluster0.wnp1l.mongodb.net/test?authSource=admin&replicaSet=atlas-mwie0e-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
     require 'vendor/autoload.php';
 
-    // $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
-    $dniPac = "10708168-S";
+    $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
     use MongoDB\Client as Mongo;
 
     // determinar donde estamos buscando
@@ -56,73 +55,78 @@
         <link href="styles/estiloPacientes.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700" rel="stylesheet" type="text/css"> 
     </head>
-    <body>
-        <div class="gwd-div-lm07"></div>
-        <!-- <img src="assets/logo.png" class="gwd-img-fa6j"> -->
-        <!-- <nav id="menu-superior">
-            <ul>
-                <li><a href="listaConsultasPaciente.php?id=<?php echo $dniPac?>"><h3 class="gwd-p-gv4z" id="listaConsultasPaciente">Consultas</h3></a></li>
-                <li><a href="hacerConsulta.php?dniPac=<?php echo $dniPac?>"><h3 class="gwd-p-gv4z gwd-p-1qhn" id="hacerConsulta">Hacer consulta</h3></a></li>
-                <li class="gwd-li-2971"><a href="perfilPaciente.php?id=<?php echo $dniPac?>"><"><h3 class="gwd-p-gv4z gwd-p-5vs1" id="PerfilPaciente">Datos Personales</h3></a></li>
-                <li class="gwd-li-1xiy"><a href="login.php"><h3 class="gwd-p-gv4z destacado" id="salir">Salir</h3></a></li> 
-            </ul>
-        </nav> -->
+    <body class="htmlNoPages">
+         <div class="gwd-div-lm07"></div>
+         <img src="assets/logo.png" class="gwd-img-fa6j">
+         <h4 class = "area" >Área de paciente</h4>
+        <nav id="menu-superior">
+        <ul>
+            <li class="gwd-p-gv4z"><a href="listaConsultasPaciente.php?id=<?php echo $IDPaciente?>">Mis tratamientos</a></li>
+            <li class="gwd-p-gv4z gwd-p-1qhn"><a href="hacerConsulta.php?IDPaciente=<?php echo $IDPaciente?>">Mis seguimientos diarios</a></li>
+            <li class="gwd-p-gv4z gwd-p-5vs1"><a href="perfilPaciente.php?id=<?php echo $IDPaciente?>"><id="PerfilPaciente">Datos personales</a></li>
+            <li class="gwd-p-gv4z salir"><a href="login.php">Salir</a></li> 
+        </ul>
+        </nav>
 
         <div class="form">
 
             <form method="POST" name = "formSeguimiento">
-                <table id="tablaSeguimiento"> 
+                <table class="tablaPerfilSeguimiento"> 
                     <tr>
-                        <td colspan="2">
+                        <td colspan="2" id = "filaTituloForm">
                             <pre><b>Formulario para Introducir los Datos de Seguimiento Diario   </b></pre>
                         </td>
                     </tr>
-                    <tr><td><pre><b>Fecha   </b></pre></td>
+                    <tr><th><pre><b>Fecha   </b></pre></th>
                         <td><input type="date" name="fecha"></td>
                     </tr>
-                    <tr><td><pre><b>Escala de roce (0 al 10)   </b></pre></td>
+                    <tr><th><pre><b>Escala de roce (0 al 10)   </b></pre></th>
                         <td><input type="number" name="roce"></td>
                     </tr>
-                    <tr><td><pre><b>Escala de dolor (0 al 10)   </b></pre></td>
+                    <tr><th><pre><b>Escala de dolor (0 al 10)   </b></pre></th>
                         <td><input type="number" name="dolor"></td>
                     </tr>
                     <tr> 
-                        <td colspan="2">
-                            <input type="checkbox" name="escuela">Me he ausentado en la escuela.
-                        </td>
+                        <th>
+                            Responda a: 
+                        </th>
+                        <td><input type="checkbox" name="escuela">Me he ausentado en la escuela.</td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <input type="checkbox" name="social">Me he ausentado en alguna actividad social.
-                        </td>
+                        <th>
+                            Responda a:
+                        </th>
+                        <td> <input type="checkbox" name="social">Me he ausentado en alguna actividad social.</td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <input type="checkbox" name="dormir">He tenido problemas para dormir.
-                        </td>
+                        <th >
+                            Responda a:
+                        </th>
+                        <td> <input type="checkbox" name="dormir">He tenido problemas para dormir.</td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <input type="checkbox" name="product">He tenido menos productividad.
-                        </td>
+                        <th>
+                            Responda a:
+                        </th>
+                        <td> <input type="checkbox" name="product">He tenido menos productividad.</td>
                     </tr>
-                    <tr><td><pre><b>Toma de medicamento   </b></pre></td>
+                    <tr><th><pre><b>Toma de medicamento   </b></pre></th>
                         <td><input type="text" name="medicamento"></td>
                     </tr>
-                    <tr><td><pre><b>Tipo de deporte realizado   </b></pre></td>
+                    <tr><th><pre><b>Tipo de deporte realizado   </b></pre></th>
                         <td><input type="text" name="deporte"></td>
                     </tr>
-                    <tr><td><pre><b>Duración del deporte (en minutos)   </b></pre></td>
+                    <tr><th><pre><b>Duración del deporte (en minutos)   </b></pre></th>
                         <td><input type="number" name="durDep"></td>
                     </tr>
-                    <tr><td><pre><b>Síntomas sufridos (dolor, roces, punzadas, u otros)  </b></pre></td>
+                    <tr><th><pre><b>Síntomas sufridos (dolor, roces, punzadas, u otros)  </b></pre></th>
                         <td><input type="text" name="sint"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <input type="submit" name="enviarSeguimiento" onclick = "return validaSeguimiento();"> 
-                            <input type="reset" name="borrar">
-                        </td>
+                        <th id = "filaBotonesForm" colspan="2">
+                            <input type="submit" class = "botonEnviar" name="enviarSeguimiento" onclick = "return validaSeguimiento();"> 
+                            <input type="reset" class = "botonEnviar" name="borrar">
+                        </th>
                     </tr>
                 </table>
                 <?php

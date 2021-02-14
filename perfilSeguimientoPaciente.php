@@ -6,7 +6,7 @@
     $mongo = new Mongo($lucia);
 
     $idDaily = isset($_POST['idDaily']) ? $_POST['idDaily'] : null;
-
+    $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
 
     $collectionDailies = $mongo->ScAid->Dailies;
     $collectionPatients = $mongo->ScAid->Patients;
@@ -41,8 +41,12 @@
   </nav>
 
         <div class="div_medico">
-            <h1> Perfil del Seguimiento</h1>
+            <h1> Perfil del seguimiento diario</h1>
             <br>  </br>
+            <form action="formularioDailies.php" method = "post">
+                 <input type="hidden" name="dniPac" value= <?php $dniPac?>>
+                <input class = "botonCrearSegu" type="submit" value="Nuevo seguimiento" />
+            </form>
             <table class = "tablaPerfilSeguimiento">
                 <tbody>
                     <?php

@@ -509,3 +509,88 @@ nav#menu-superior ul li a {
   text-align: left;
 
 }
+
+.tablaPerfilSeguimiento{
+  width: 1000px;
+  text-align: left;
+  background-color:#447c9b;
+  border-collapse: separate;
+  position: absolute;
+  
+  
+}
+.tablaPerfilSeguimiento th{
+  background-color: #1d3556;
+  color: #f3faed;
+  font-size: 14px;
+  width: 50%;
+  padding: 10px;
+}
+.tablaPerfilSeguimiento td{
+  background-color: #f3faed;
+  border-bottom: #1d3556;
+  width: 50%;
+  text-align: center;
+}
+.div_medico {
+  top: 150px;
+  width: 100%;
+  height: 10px;
+  left: 50px;
+  position: absolute;
+  text-decoration: none;
+}
+
+.tablaPerfilSeguimiento{
+  width: 1000px;
+  text-align: left;
+  border-collapse: separate;
+  position: absolute;
+  left: 200px;
+  background-color: #abdbdb;
+  
+}
+.tablaPerfilSeguimiento th{
+  background-color: #1d3556;
+  color: #f3faed;
+  font-size: 14px;
+  width: 30%;
+  text-align: left;
+}
+.tablaPerfilSeguimiento td{
+  background-color: #f3faed;
+  border-bottom: #1d3556;
+  width: 70%;
+}
+#filaTituloForm{
+  background-color: #e13c44;
+  color: #f3faed;
+  font-weight: bold;
+}
+#filaBotonesForm{
+  background-color: #abdbdb;
+  border-collapse: collapse;
+  text-align: center;
+}
+.botonEnviar{
+  background-color:#e13c44;
+  color: #f3faed;
+  font-size: 14px;
+}
+.botonEnviar:hover{
+  background-color:#028090;
+  color: #f3faed;
+}
+.botonCrearSegu{
+  position: absolute;
+  background-color:#e13c44;
+  color: #f3faed;
+  font-size: 16px;
+  top:60px;
+  right: 200px;
+}
+.botonCrearSegu:hover{
+  background-color:#028090;
+  color: #f3faed;
+}
+
