@@ -4,6 +4,8 @@
   require 'vendor/autoload.php'; // incluir lo bueno de Composer
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($lucia);
+
+  $dniMedico = "";
 ?>
 
 <html>
@@ -101,11 +103,11 @@
 ?>
     <h1>Listado de médicos </h1>
 
-    <div>
-      <form action="formularioRegistrarMedico.php">
-        <input type="submit" value="Nuevo médico" />
-      </form>
-    <div>
+    <form action="formularioRegistrarMedico.php" method = "post">
+      <input type="hidden" name="medicoDNI" value= <?php $dniMedico?>>
+      <input class = "botonCrearMed" type="submit" value="Nuevo médico" />
+    </form>
+    
       
     <div>
       

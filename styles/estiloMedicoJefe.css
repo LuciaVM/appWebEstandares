@@ -1,0 +1,317 @@
+p {
+    margin: 0px;
+  }
+  h1 {
+    margin: 0px;
+    color: #1d3556;
+  }
+  h2 {
+    margin: 0px;
+    color: #1d3556;
+  }
+  h3 {
+    margin: 0px;
+    color: #1d3556;
+  }
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+  }
+  body {
+    background-color: #abdbdb;
+    font-family: Oswald, "Open Sans", Arial, sans-serif;
+    font-size: 12pt;
+    margin: 0px;    
+  }
+  .gwd-div-lm07{
+    color: black;
+    padding: 0.5em 3em;
+    align-items: center;
+    display: flex;
+    height: 110px;
+    position: absolute;
+    background-image: none;
+    background-color: #1d3556;
+    border-image-source: none;
+    border-image-width: 1;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-color: transparent;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .gwd-img-fa6j {
+    position: absolute;
+    height: 15%;
+    width: 113.45px;
+    top: 0px;
+    left: 50px;
+  }
+  .gwd-p-gv4z {
+    position: absolute;
+    width: 200px;
+    height: 45px;
+    font-family: Oswald;
+    font-size: 25px;
+    margin: 4px;
+    right: 200px;
+    top: 25px;
+    text-decoration: none;
+    
+  }
+  .gwd-p-1qhn {
+    width: 100px;
+    transform-origin: 50% 50% 0px;
+    right: 80px;
+  }
+
+  .area{
+    position: absolute;
+    height: 20em;
+    width: 30%;
+    top: 0px;
+    left: 180px;
+    color: #f3faed;
+    font-size: 25px;
+  }
+
+#tituloSeccionRol{
+  margin: 4px;
+  left: 430px;
+  top: 180px;
+  width: 800px;
+  height: 100px;
+  position: absolute;
+  text-align: center;
+}
+
+  .form {
+    background-color: #abdbdb;
+    font-family: Oswald, "Open Sans", Arial, sans-serif;
+    font-size: 12pt;
+    font-family: Oswald;
+    margin: 4px;
+    left: 400px;
+    top: 300px;
+    width: 1000px;
+    height: 100px;
+    position: absolute;
+  }
+
+  #tablaRol{
+    display: table;
+    width: 90%;
+    text-align: center;
+    caption-side: top;
+    background-color: #f3faed;
+    border-collapse: collapse;
+  }
+  #botonRol{
+    width: 150px;
+    height: 40px;
+    color:#f3faed;
+    background-color: #447c9b;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  #botonRol:hover{
+    color:#f3faed;
+    background-color: #827784;
+  }
+  #filaBoton{
+    background-color: #abdbdb;
+    height: 125px;
+  }
+
+  .gwd-p-5vs1 {
+    transform-origin: 50% 50% 0px;
+    width: 268px;
+    left: 490px;
+    background-color:#abdbdb;
+  }
+  
+  header nav#menu-superior {
+    position: absolute;
+    right: 0px;
+    top: 3em;
+    margin-right: 2em;
+  }
+  
+  nav#menu-superior ul li {
+    display: inline-block;
+    background-color:#e13c44;
+    color:#abdbdb;
+    
+  }
+  nav#menu-superior ul li:hover {
+    display: inline;
+    float: left;
+    background-color:#447c9b;
+  }
+
+  nav#menu-superior ul li a {
+    padding: 1em;
+    color: #f3faed;
+    text-decoration: none;
+
+  }
+  nav#menu-superior ul li a:hover {
+    padding: 1em;
+    color: #f3faed;
+    text-decoration: underline;
+  }
+
+  .gwd-li-2971 {
+    left: 104px;
+    top: 16px;
+  }
+  .gwd-li-1xiy {
+    left: 136px;
+    top: 16px;
+  }
+  .gwd-li-yj6f {
+    left: 72px;
+    top: 16px;
+  }
+
+
+
+  .Listado_medicos_medicoJefe {
+    margin: 20px;
+    left: 35px;
+    top: 20%;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+  
+  }
+  .Listado_medicos_medicoJefe div {
+    top: 5em;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    text-decoration: none;
+  
+  }
+
+.tablaListadoMedicos {
+    width: 90%;
+    text-align: left;
+    caption-side: top;
+    background-color: #f3faed;
+    border-collapse: collapse;
+  }
+ .tablaListadoMedicos caption, td, th {
+    padding: 0.3em;
+  
+  }
+  .tablaListadoMedicos th, td {
+    padding: 10px;
+    border-bottom: 10px solid #abdbdb;
+    width: 25%;
+    text-decoration: none;
+  }
+  
+  .tablaListadoMedicos th{
+    background-color: #1d3556;
+    color: #f3faed;
+  }
+
+  .botonDesplegableBorrar{
+    background: #1d3556;
+    color: #f3faed;
+    border-color: transparent;
+    font-weight: bold;
+  }
+  .botonDesplegableAsignar{
+    background: #1d3556;
+    color: #f3faed;
+    border-color: transparent;
+    font-weight: bold;
+  }
+  .botonDesplegableBorrar:hover{
+    background: red;
+    color: #f3faed;
+    border-color: transparent;
+  }
+  .botonDesplegableAsignar:hover{
+    background: green;
+    color: #f3faed;
+    border-color: transparent;
+  }
+
+  .asignarOcultoInicio{
+    display:none;
+    background-color:#1d3556;
+    color: #f3faed;
+  }
+  .borrarOcultoInicio{
+    display:none;
+    background-color:#1d3556;
+    color: #f3faed;
+  }
+
+  .botonEnviar{
+    background-color: #f3faed;
+    color: #1d3556;
+    font-weight: bold;
+  }
+  .botonEnviar:hover{
+    background:#447c9b;
+    color: #f3faed;
+    border-color: transparent;
+  }
+.selectorPacientes{
+  width: 300px;
+  overflow: hidden;
+  background: #f3faed;
+  font-weight: bold;
+  color:#1d3556;
+}
+
+.botonCrearMed{
+  position:absolute;
+  right: 200px;
+  font-weight: bold;
+  font-size: 15pt;
+  color: #f3faed;
+  background-color: #e13c44;
+}
+.botonCrearMed:hover{
+  color: #f3faed;
+  background-color: #447c9b;
+}
+
+.div_medico{
+  position:absolute;
+  top: 200px;
+  left: 100px;
+}
+.tabla_medico{
+  width:1200px;
+  background-color: #f3faed; 
+  border-collapse: collapse;
+}
+
+#pruebaForm{
+  background-color: #abdbdb;
+}
+
+.botonEscribirRespuesta{
+  font-weight: bold;
+  font-size: 12pt;
+  color: #f3faed;
+  background-color: #e13c44;
+}
+.botonEscribirRespuesta:hover{
+  color: #f3faed;
+  background-color: #447c9b;
+}
+#filaBotonesRespuesta{
+  background-color: #abdbdb;
+  border:none;
+  text-align: center;
+}
+

@@ -128,11 +128,11 @@ $mongo = new Mongo($lucia);
 </body>
 
       
-    <div class="form_Medico">
+    <div class="div_medico">
         <h1> Formulario creación de médico </h1>
             <br>  </br>
-            <form name="formulario" method="POST" enctype="multipart/form-data">
-                <table>
+            <form id = "pruebaForm" name="formulario" method="POST" enctype="multipart/form-data">
+                <table class = "tabla_medico">
                     <tr><td><pre><b> Nombre </b></pre></td>
                         <td><input type = "text" name = "nombreMedico" size="50"></td>
                     </tr>
