@@ -77,12 +77,22 @@
   <img src="assets/logo.png" class="gwd-img-fa6j">
   <h4 class = "area" >Área de médico</h4>
   <nav id="menu-superior">
-    <ul>
-        <li li class="gwd-p-gv4z"><a href="listaConsultasMedico.php?idMed=<?php echo $idMed?>">Consultas Activas</h3></a></li>
-        <li class="gwd-p-gv4z gwd-li-yj6f"><a href="listaPacientesMedico.php?idMed=<?php echo $idMed?>">Pacientes</a></li>
-        <li class="gwd-p-gv4z gwd-p-5vs1"><a href="login.php">Salir</a></li>
-    </ul>
-  </nav>
+            <ul>
+                <li class="gwd-p-gv4z">
+                    <form action="listaPacientesMedico.php" method = "post">
+                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input class = "botonListaPacientes" type="submit" value="Lista de Pacientes" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z gwd-p-5vs1">
+                    <form action="login.php" method = "post">
+                            <!-- <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="dniPac" value= <?php $seguimiento['Patient_DNI'] ?>> -->
+                            <input class = "botonSalir" type="submit" value="Salir" >
+                    </form>   
+                </li>
+            </ul>
+    </nav>
 
 <div class = "DesplegablesPefilPaciente">
     <div class = "Perfil_paciente">

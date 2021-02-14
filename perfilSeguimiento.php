@@ -7,8 +7,10 @@
     $mongo = new Mongo($clara);
 
     // $idSeg = isset($_POST['idSeg']) ? $_POST['idSeg'] : null;
-
     $idSeg = "5fc96e60b681852b5c6118c5";
+
+    // $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
+
     
     // $item = $collection->findOne(array(
     //     '_id' => new MongoId('4e49fd8269fd873c0a000000')));
@@ -21,6 +23,9 @@
     $seguimiento = $collectionSeguimientos->findOne([
         '_id' => new MongoDB\BSON\ObjectId($idSeg),
     ]);
+
+    $pacienteAsign = $collectionPatients->find(['DNI' => $seguimiento['Patient_DNI']])->toArray();
+
     // $restaurant = $database->restaurants->findOne([
     //     '_id' => new MongoDB\BSON\ObjectId('594d5ef280a846852a4b3f70'),
     // ]);
@@ -40,9 +45,19 @@
         <h4 class = "area" >Área de médico </h4>
         <nav id="menu-superior">
             <ul>
-                <li li class="gwd-p-gv4z"><a href="listaConsultasMedico.php?idMed=<?php echo $idMed?>">Consultas Activas</h3></a></li>
-                <li class="gwd-p-gv4z gwd-li-yj6f"><a href="listaPacientesMedico.php?idMed=<?php echo $idMed?>">Pacientes</a></li>
-                <li class="gwd-p-gv4z gwd-p-5vs1"><a href="login.php">Salir</a></li>
+                <li class="gwd-p-gv4z">
+                    <form action="listaPacientesMedico.php" method = "post">
+                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input class = "botonListaPacientes" type="submit" value="Lista de Pacientes" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z gwd-p-5vs1">
+                    <form action="login.php" method = "post">
+                            <!-- <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="dniPac" value= <?php $seguimiento['Patient_DNI'] ?>> -->
+                            <input class = "botonSalir" type="submit" value="Salir" >
+                    </form>   
+                </li>
             </ul>
         </nav>
 
@@ -52,7 +67,6 @@
             <table class = "tablaPerfilSeguimiento">
                 <tbody>
                     <?php
-                            $pacienteAsign = $collectionPatients->find(['DNI' => $seguimiento['Patient_DNI']])->toArray();
                             echo "<tr><th>Paciente</th><td>" . $pacienteAsign[0]['Name'].' '. $pacienteAsign[0]['Surname'] ."</td></tr>";
                             echo "<tr><th>Fecha</th><td>" . $seguimiento['Date'] ."</td></tr>";
                             echo "<tr><th>Sala</th><td>" . $seguimiento['Room'] ."</td></tr>";
@@ -65,7 +79,6 @@
                             echo "<tr><th>Peso</th><td>" . $seguimiento['Weight'] ."</td></tr>";
                             echo "<tr><th>Test neurológico</th><td>" . $seguimiento['Neurological_test'] ."</td></tr>";
                             echo "<tr><th>Tensión</th><td>" . $seguimiento['Blood_pressure'] ."</td></tr>";
-                            $pacienteAsign = $collectionPatients->find(['DNI' => $seguimiento['Patient_DNI']])->toArray();
                             echo "<tr><th>Paciente</th><td>" . $pacienteAsign[0]['Name'].' '. $pacienteAsign[0]['Surname'] ."</td></tr>";
                         ?>
                 </body>

@@ -44,9 +44,19 @@
         <h4 class = "area" >Área de médico</h4>
         <nav id="menu-superior">
             <ul>
-                <li li class="gwd-p-gv4z"><a href="listaConsultasMedico.php?idMed=<?php echo $idMed?>">Consultas Activas</h3></a></li>
-                <li class="gwd-p-gv4z gwd-li-yj6f"><a href="listaPacientesMedico.php?idMed=<?php echo $idMed?>">Pacientes</a></li>
-                <li class="gwd-p-gv4z gwd-p-5vs1"><a href="login.php">Salir</a></li>
+                <li class="gwd-p-gv4z">
+                    <form action="listaPacientesMedico.php" method = "post">
+                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input class = "botonListaPacientes" type="submit" value="Lista de Pacientes" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z gwd-p-5vs1">
+                    <form action="login.php" method = "post">
+                            <!-- <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="dniPac" value= <?php $seguimiento['Patient_DNI'] ?>> -->
+                            <input class = "botonSalir" type="submit" value="Salir" >
+                    </form>   
+                </li>
             </ul>
         </nav>
 
@@ -75,9 +85,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" id = "filaBotonesRespuesta">
-                            <input type="submit" class = "botonEscribirRespuesta" name="enviarTratamiento" onclick = "return validaTratamiento();"> 
-                            <input type="reset" class = "botonEscribirRespuesta" name="borrar">
+                        <td colspan="2" id = "filaBotonesForm">
+                            <input type="submit" class = "botonForm" name="enviarTratamiento" onclick = "return validaTratamiento();"> 
+                            <input type="reset" class = "botonForm" name="borrar">
                         </td>
                     </tr>
                 </table>
