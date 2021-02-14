@@ -150,25 +150,26 @@
         <title>Registro o Edición de Paciente</title> 
         <!-- cambiar con un if  -->
         <meta name="generator" content="Google Web Designer 10.0.2.0105">
-        <link href="styles/estiloPacientes.css" rel="stylesheet">
+        <link href="styles/estiloMedicos.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700" rel="stylesheet" type="text/css"> 
     </head>
     <body>
         <div class="gwd-div-lm07"></div>
-        <!-- <img src="assets/logo.png" class="gwd-img-fa6j"> -->
-        <!-- <nav id="menu-superior">
+        <img src="assets/logo.png" class="gwd-img-fa6j">
+        <h4 class = "area" >Área de médico</h4>
+        <nav id="menu-superior">
             <ul>
-                <li><a href="listaConsultasPaciente.php?id=<?php echo $dniPac?>"><h3 class="gwd-p-gv4z" id="listaConsultasPaciente">Consultas</h3></a></li>
-                <li><a href="hacerConsulta.php?dniPac=<?php echo $dniPac?>"><h3 class="gwd-p-gv4z gwd-p-1qhn" id="hacerConsulta">Hacer consulta</h3></a></li>
-                <li class="gwd-li-2971"><a href="perfilPaciente.php?id=<?php echo $dniPac?>"><"><h3 class="gwd-p-gv4z gwd-p-5vs1" id="PerfilPaciente">Datos Personales</h3></a></li>
-                <li class="gwd-li-1xiy"><a href="login.php"><h3 class="gwd-p-gv4z destacado" id="salir">Salir</h3></a></li> 
+                <li li class="gwd-p-gv4z"><a href="listaConsultasMedico.php?idMed=<?php echo $idMed?>">Consultas Activas</h3></a></li>
+                <li class="gwd-p-gv4z gwd-li-yj6f"><a href="listaPacientesMedico.php?idMed=<?php echo $idMed?>">Pacientes</a></li>
+                <li class="gwd-p-gv4z gwd-p-5vs1"><a href="login.php">Salir</a></li>
             </ul>
-        </nav> -->
+        </nav>
 
-        <div class="form">
-
-            <form method="POST" name = "formSeguimiento">
-                <table>
+        <div class="div_medico">
+            <h1> Formulario para Introducir datos de Paciente  </h1>
+            <br>  </br>
+            <form method="POST" name = "formSeguimiento"  id = "pruebaForm">
+                <table class="tabla_medico">
                     <tr><td><pre><b> Nombre </b></pre></td>
                         <td><input type = "text" name = "nombre" size="50" value=<?php echo $nombre ?>></td>
                     </tr>

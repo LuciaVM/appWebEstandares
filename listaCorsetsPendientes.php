@@ -6,7 +6,7 @@
 
     // $dniTec = isset($_POST['dniTec']) ? $_POST['dniTec'] : null;
     
-  $dniTec = "08908908-F";
+  $dniTec = "45478596-H";
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($clara);
   
@@ -23,7 +23,7 @@
 <head>
 <meta charset="utf-8">
   <title>Listado de Corsets Pendientes</title>
-  <link href="styles/estiloMedicoJefe.css" rel="stylesheet">
+  <link href="styles/estiloTecnicos.css" rel="stylesheet">
   <meta name="generator" content="Google Web Designer 10.0.2.0105">
   <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700" rel="stylesheet" type="text/css">
   <style type="text/css">
@@ -38,23 +38,23 @@
 
   <div class="gwd-div-lm07"></div>
   <img src="assets/logo.png" class="gwd-img-fa6j">
-  <h4 class = "area" >Área de técnico</h4>
-  <!-- <nav id="menu-superior">
-    <ul>
-      <li class="gwd-p-gv4z"><a href='seleccionarRol.php?idMed=<?php echo $idMed?>'>Seleccionar Rol</a></li>
-      <li class="gwd-p-gv4z gwd-p-1qhn "><a href="login.php">Salir</a></li>
-    </ul>
-  </nav> -->
+        <h4 class = "area" >Área de técnico</h4>
+        <nav id="menu-superior">
+            <ul>
+                <li li class="gwd-p-gv4z"><a href="perfilTecnico.php?idMed=<?php echo $idMed?>">Mi Perfil</h3></a></li>
+                <li class="gwd-p-gv4z gwd-li-yj6f"><a href="listaCorsetsPendientes.php?idMed=<?php echo $idMed?>">Corsets Pendientes</a></li>
+                <li class="gwd-p-gv4z gwd-p-5vs1"><a href="login.php">Salir</a></li>
+            </ul>
+        </nav>
 </body>
-<div class = "Listado_medicos_medicoJefe">
+<div class = "Listado_consultas_medico">
 
     <h1>Listado de Corsets Pendientes </h1>
 
     <div>
       
-          <table class = "tablaListadoMedicos">
+          <table class = "tablaListadoConsultasMedico">
               <tr>
-                <!-- <th> ID del Corset</th> -->
                 <th>Nombre del paciente</th>
                 <th>Apellidos del paciente</th>
                 <th>Completar</th>
@@ -69,10 +69,13 @@
                 
                     ?>
                         <tr>
-                            <!-- <td><?php echo $brace['idCorset'] ?></td> -->
-                            <td><?php echo $p['Name'] ?></td>
+                           <td><?php echo $p['Name'] ?></td>
                             <td><?php echo $p['Surname'] ?></td>
-                            <td>Completar</td> 
+                            <td>
+                              <form action="POST">
+                                <input class = "botonDetalles" type="submit" value="Completar" />
+                              </form>
+                            </td> 
                             <!-- no se como poner el enlace todavia -->
                         </tr>
                     <?php

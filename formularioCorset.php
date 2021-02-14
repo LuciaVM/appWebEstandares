@@ -73,30 +73,26 @@
         <meta charset="utf-8">
         <title>Registro de un Corsé</title>
         <meta name="generator" content="Google Web Designer 10.0.2.0105">
-        <link href="styles/estiloPacientes.css" rel="stylesheet">
+        <link href="styles/estiloTecnicos.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700" rel="stylesheet" type="text/css"> 
     </head>
     <body>
         <div class="gwd-div-lm07"></div>
-        <!-- <img src="assets/logo.png" class="gwd-img-fa6j"> -->
-        <!-- <nav id="menu-superior">
+        <img src="assets/logo.png" class="gwd-img-fa6j">
+        <h4 class = "area" >Área de técnico</h4>
+        <nav id="menu-superior">
             <ul>
-                <li><a href="listaConsultasPaciente.php?id=<?php echo $dniPac?>"><h3 class="gwd-p-gv4z" id="listaConsultasPaciente">Consultas</h3></a></li>
-                <li><a href="hacerConsulta.php?dniPac=<?php echo $dniPac?>"><h3 class="gwd-p-gv4z gwd-p-1qhn" id="hacerConsulta">Hacer consulta</h3></a></li>
-                <li class="gwd-li-2971"><a href="perfilPaciente.php?id=<?php echo $dniPac?>"><"><h3 class="gwd-p-gv4z gwd-p-5vs1" id="PerfilPaciente">Datos Personales</h3></a></li>
-                <li class="gwd-li-1xiy"><a href="login.php"><h3 class="gwd-p-gv4z destacado" id="salir">Salir</h3></a></li> 
+                <li li class="gwd-p-gv4z"><a href="perfilTecnico.php?idMed=<?php echo $idMed?>">Mi Perfil</h3></a></li>
+                <li class="gwd-p-gv4z gwd-li-yj6f"><a href="listaCorsetsPendientes.php?idMed=<?php echo $idMed?>">Corsets Pendientes</a></li>
+                <li class="gwd-p-gv4z gwd-p-5vs1"><a href="login.php">Salir</a></li>
             </ul>
-        </nav> -->
+        </nav>
 
-        <div class="form">
-
-            <form method="POST" name = "formSeguimiento">
-                <table id="tablaSeguimiento"> 
-                    <tr>
-                        <td colspan="2">
-                            <pre><b>Formulario para Introducir los Datos de un Corsé  </b></pre>
-                        </td>
-                    </tr>
+        <div class="div_medico">
+            <h1> Formulario para Introducir los Datos de un Corset  </h1>
+            <br>  </br>
+            <form method="POST" name = "formSeguimiento" id = "pruebaForm">
+                <table class="tabla_medico"> 
                     <tr><td><pre><b>Tipo   </b></pre></td>
                         <td><input type="text" name="tipo"></td>
                     </tr>
@@ -123,9 +119,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <input type="submit" name="enviarCorse" onclick = "return validaCorse();"> 
-                            <input type="reset" name="borrar">
+                        <td colspan="2" id = "filaBotonesRespuesta">
+                            <input type="submit" class = "botonEscribirRespuesta" name="enviarCorse" onclick = "return validaCorse();"> 
+                            <input type="reset" class = "botonEscribirRespuesta" name="borrar">
                         </td>
                     </tr>
                 </table>
