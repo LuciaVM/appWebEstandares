@@ -62,71 +62,89 @@
 ?>
 <!DOCTYPE html>
 <html>
-    <!-- <script>
-        function validaSeguimiento(){
-            date = document.formSeguimiento.fecha.value;
-                if (date == ""){
-                    alert("Debes completar la fecha");
-                    return false;
-                }
-            sala = document.formSeguimiento.sala.value;
-                if (sala == ""){
-                    alert("Debes completar la sala");
-                    return false;
-                }
-            hora = document.formSeguimiento.hora.value;
-                if (hora == ""){
-                    alert("Debes completar la hora");
-                    return false;
-                }
-            desv = document.formSeguimiento.desv.value;
-                if (desv == ""){
-                    alert("Debes completar el grado de desviación");
-                    return false;
-                }
-            curv = document.formSeguimiento.curv.value;
-                if (curv == ""){
-                    alert("Debes completar el patrón de la curvatura");
-                    return false;
-                }
-            loc = document.formSeguimiento.loc.value;
-                if (loc == ""){
-                    alert("Debes completar la localización de la curvatura");
-                    return false;
-                }
-            obs = document.formSeguimiento.obs.value;
-                if (obs == ""){
-                    alert("Debes completar las observaciones");
-                    return false;
-                }
-            alt = document.formSeguimiento.alt.value;
-                if (alt == ""){
-                    alert("Debes completar la altura");
-                    return false;
-                }
-            peso = document.formSeguimiento.peso.value;
-                if (peso == ""){
-                    alert("Debes completar el peso");
-                    return false;
-                }
-            neur = document.formSeguimiento.neur.value;
-                if (neur == ""){
-                    alert("Debes completar los datos sobre los test neurológicos");
-                    return false;
-                }
-            pres = document.formSeguimiento.pres.value;
-                if (pres == ""){
-                    alert("Debes completar la presión sanguínea");
-                    return false;
-                }
-
-            if(!document.formSeguimiento.datos.checked){
-                alert("Debe aceptar el tratamiento de datos");
+    <script>
+        function validaForm(){
+        nombreMed = document.formSeguimiento.nombre.value;
+        if (nombreMed == ""){
+            alert("Debes completar el nombre");
+            return false;
+        }
+        apellidos = document.formSeguimiento.apellidos.value;
+        if (apellidos == ""){
+            alert("Debes completar los apellidos");
+            return false;
+        }
+        dni = document.formSeguimiento.dni.value;
+        if (dni == ""){
+            alert("Debes completar el DNI");
+            return false;
+        }
+        nss = document.formSeguimiento.nss.value;
+        if (nss == ""){
+            alert("Debes completar el número de la seguridad social");
+            return false;
+        }
+        direccion = document.formSeguimiento.direccion.value;
+        if (direccion == ""){
+            alert("Debes completar la dirección");
+            return false;
+        }
+        telefono = document.formSeguimiento.telefono.value;
+        if (!/^\d+$/.test(telefono)) {
+                alert("El teléfono no es adecuado");
                 return false;
             }
-            return true;
+        email = document.formSeguimiento.email.value;
+        if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+            alert("El email es incorrecto");
+            return (false);
         }
-    </script> -->
+        lugarNac = document.formSeguimiento.lugarNac.value;
+        if (lugarNac == ""){
+            alert("Debes completar el lugar de nacimiento");
+            return false;
+        }
+        fechaNac = document.formSeguimiento.fechaNac.value;
+        if (fechaNac == ""){
+            alert("Debes completar la fecha de nacimiento");
+            return false;
+        }
+
+        sexo = document.formSeguimiento.sexo.value;
+        if (sexo == ""){
+            alert("Debes completar el sexo");
+            return false;
+        }
+        nomEmer = document.formSeguimiento.nomEmer.value;
+        if (nomEmer == ""){
+            alert("Debes completar el nombre del contacto de emergencia");
+            return false;
+        }
+        relEmer = document.formSeguimiento.relEmer.value;
+        if (relEmer == ""){
+            alert("Debes completar la relación con el contacto de emergencia");
+            return false;
+        }
+        telEmer = document.formSeguimiento.telEmer.value;
+        if (telEmer == ""){
+            alert("Debes completar el teléfono del contacto de emergencia");
+            return false;
+        }
+        
+        contraseña = document.formSeguimiento.password.value;
+        confirmacion = document.formSeguimiento.passwordConf.value;
+
+        if (contraseña.length == 0 || confirmacion.length == 0) {
+                alert("Los campos de la contraseña no pueden quedar vacios");
+                return false;
+            }
+            if (contraseña != confirmacion) {
+                alert("Las contraseñas deben coincidir");
+                return false;
+            } 
+        return true;
+    }
+    </script>
     <head>
         <meta charset="utf-8">
         <title>Registro o Edición de Paciente</title> 
