@@ -43,10 +43,6 @@
         <div class="div_medico">
             <h1> Perfil del seguimiento diario</h1>
             <br>  </br>
-            <form action="formularioDailies.php" method = "post">
-                 <input type="hidden" name="dniPac" value= <?php $dniPac?>>
-                <input class = "botonCrearSegu" type="submit" value="Nuevo seguimiento" />
-            </form>
             <table class = "tablaPerfilSeguimiento">
                 <tbody>
                     <?php
