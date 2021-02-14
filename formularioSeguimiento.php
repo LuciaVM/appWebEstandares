@@ -191,6 +191,7 @@
                             'Blood_pressure' => $pres,
                             'Patient_DNI' => $dniPac
                             ] );
+                        ?> <script> alert("Se ha creado el informe de seguimiento") </script> <?php
                         echo "Inserted with Object ID '{$resultado->getInsertedId()}'"; //quitar cuando se termine
                     }
                 ?>
