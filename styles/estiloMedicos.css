@@ -80,10 +80,24 @@ p {
     right: 120px;
     width: 110px;
   }
-  
+  .div_medico{
+    position:absolute;
+    top: 200px;
+    left: 100px;
+  }
+
   .gwd-p-5vs1 {
     width: 80px;
     right: 20px;
+  }
+  .tabla_medico{
+    width:1200px;
+    background-color: #f3faed; 
+    border-collapse: collapse;
+  }
+  
+  #pruebaForm{
+    background-color: #abdbdb;
   }
 
   .form {
@@ -356,6 +370,17 @@ a{
   color: #f3faed;
   border-color:transparent;
 }
+
+.botonForm{ 
+  font-weight: bold;
+  font-size: 12pt;
+  color: #f3faed;
+  background-color: #e13c44;
+}
+.botonForm:hover{
+  color: #f3faed;
+  background-color: #447c9b;
+}
 #tituloPerfilConsultaPac{
   margin: 4px;
   left: 115px;
@@ -505,4 +530,9 @@ a{
   font-size: 14px;
   position: absolute;
   left: -5px;
+}
+#filaBotonesForm{
+  background-color: #abdbdb;
+  border:none;
+  text-align: center;
 }
