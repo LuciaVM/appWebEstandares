@@ -4,9 +4,9 @@
     require 'vendor/autoload.php';
 
     // $idCorset = isset($_POST['idCorset']) ? $_POST['idCorset'] : null;
-    // $idTec = isset($_POST['idTec']) ? $_POST['idTec'] : null;
+    // $dniTec = isset($_POST['dniTec']) ? $_POST['dniTec'] : null;
 
-    $idTec = "08908908-F";
+    $dniTec = "08908908-F";
     $idCorset = "277";
 
     use MongoDB\Client as Mongo;
@@ -157,6 +157,7 @@
                         ?> <script> alert("Se han guardado los datos del corsé") </script> <?php
                     }
                 ?>
+            </form>
         </div>
     </body>
 </html>

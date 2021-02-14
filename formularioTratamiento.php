@@ -137,6 +137,7 @@
                         echo "Inserted with Object ID '{$resultado->getInsertedId()}'"; //quitar cuando se termine
                     }
                 ?>
+            </form>
         </div>
     </body>
 </html>

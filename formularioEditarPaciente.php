@@ -306,6 +306,7 @@
                         }
                     }
                 ?>
+            </form>
         </div>
     </body>
 </html>
