@@ -58,13 +58,6 @@ p {
     color: #f3faed;
     font-size: 25px;
   }
-  #respuesta{
-    background-color: #028090;
-    color: #f3faed;
-  }
-  #archivo{
-    background-color: #abdbdb;
-  }
   .gwd-p-gv4z {
     position: absolute;
     width: 110px;
@@ -76,15 +69,67 @@ p {
     top: 30px;
     text-decoration: none;
   }
+
+  .botonListaPacientes{ 
+    font-weight: bold;
+    font-size: 12pt;
+    color: #f3faed;
+    width: 110px;
+    height: 38px;
+    background-color: #e13c44;
+  }
+  /* .gwd-p-1qhn {
+    width: 220px;
+    right: 305px;
+  } */
+  .botonMedicos{ 
+    font-weight: bold;
+    font-size: 12pt;
+    color: #f3faed;
+    width: 220px;
+    height: 38px;
+    background-color: #e13c44;
+  }
+    
   .gwd-li-yj6f {
     right: 120px;
-    width: 180px;
+    width: 165px;
   }
   
   .gwd-p-5vs1 {
     width: 80px;
     right: 20px;
   }
+  .botonRegistrar{ 
+    font-weight: bold;
+    font-size: 12pt;
+    color: #f3faed;
+    width: 165px;
+    height: 38px;
+    background-color: #e13c44;
+  }
+  .salir{
+    transform-origin: 50% 50% 0px;
+    width: 80px;
+    right: 20px;
+  }
+  .botonSalir{ 
+    font-weight: bold;
+    font-size: 12pt;
+    color: #f3faed;
+    width: 80px;
+    height: 38px;
+    right: 20px;
+    background-color: #e13c44;
+  }
+  #respuesta{
+    background-color: #028090;
+    color: #f3faed;
+  }
+  #archivo{
+    background-color: #abdbdb;
+  }
+
 
   .form {
     background-color: #abdbdb;
@@ -266,6 +311,26 @@ p {
 .botonCrearPac:hover{
   color: #f3faed;
   background-color: #447c9b;
+}
+.tablaPerfilSeguimiento{
+  width: 1000px;
+  text-align: left;
+  background-color:#447c9b;
+  border-collapse: separate;
+  position: absolute;
+  left: 200px;
+  
+}
+.tablaPerfilSeguimiento th{
+  background-color: #1d3556;
+  color: #f3faed;
+  font-size: 14px;
+  width: 30%;
+}
+.tablaPerfilSeguimiento td{
+  background-color: #f3faed;
+  border-bottom: #1d3556;
+  width: 70%;
 }
 .tablaListadoConsultasMedico {
   width: 90%;
