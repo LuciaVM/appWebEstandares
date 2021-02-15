@@ -4,8 +4,9 @@
   require 'vendor/autoload.php';
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($lucia);
+  $medicoDNI = isset($_POST['medicoDNI']) ? $_POST['medicoDNI'] : null;
 
-  $dniMedico = "42745921-f";
+
 ?>
 
 <html>
@@ -27,13 +28,13 @@
             <ul>
                 <li class="gwd-p-gv4z">
                     <form action="listaPacientesMedico.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php $medicoDNI ?>>
                             <input class = "botonListaPacientes" type="submit" value="Lista de Pacientes" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z gwd-p-5vs1">
                     <form action="login.php" method = "post">
-                            <!-- <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <!-- <input type="hidden" name="medicoDNI" value= <?php $medicoDNI ?>>
                             <input type="hidden" name="dniPac" value= <?php $seguimiento['Patient_DNI'] ?>> -->
                             <input class = "botonSalir" type="submit" value="Salir" >
                     </form>   
@@ -43,8 +44,8 @@
   <div class = "Listado_consultas_medico">
 
     <h1>Listado de pacientes </h1>
-    <form action="formularioRegistrarMedico.php" method= "post">
-      <input type="hidden" name="medicoDNI" value= <?php $dniMedico?>>
+    <form action="formularioEditarPaciente.php" method= "post">
+      <input type="hidden" name="medicoDNI" value= <?php echo $medicoDNI?>>
       <input class = "botonCrearPac" type="submit" value="Nuevo paciente" />
     </form>
     <div>
@@ -64,7 +65,7 @@
               $result = $collection1->find()->toArray();
 
               foreach ($result as $paciente) {
-                if($paciente['Doctor_DNI'] == $dniMedico){
+                if($paciente['Doctor_DNI'] == $medicoDNI){
                   echo '
                     <tr>
                         <td>'.$paciente['DNI'].'</td>
@@ -72,14 +73,14 @@
                         <td>'.$paciente['Surname'].'</td>
                         <td>
                           <form action="perfilPacienteMedico.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= '.$dniMedico.'>
+                            <input type="hidden" name="medicoDNI" value= '.$medicoDNI.'>
                             <input type="hidden" name="dniPac" value= '.$paciente['DNI'].'>
                             <input class = "botonDetalles" type="submit" value="Detalles" />
                           </form>
                         </td>
                         <td>
                           <form action="listaPacientesMedico.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= '.$dniMedico.'>
+                            <input type="hidden" name="medicoDNI" value= '.$medicoDNI.'>
                             <input type="hidden" name="dniPac" value= '.$paciente['DNI'].'>
                             <input class = "botonBorrarPac" name = "borrarPaciente" type="submit" value="Borrar" />
                           </form>

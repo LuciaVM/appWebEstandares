@@ -5,7 +5,7 @@
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($lucia);
 
-  $dniMedico = "";
+  $dniMed = isset($_POST['medicoDNI']) ? $_POST['medicoDNI'] : null;
 ?>
 
 <html>
@@ -69,19 +69,19 @@
     <ul>      
                 <li class="gwd-p-gv4z areaListaPac">
                     <form action="seleccionarRol.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonListaPacientes" type="submit" value="Seleccionar Rol" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z areaMedicos" >
                     <form action="listaMedicosMedicoJefe.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonMedicos" type="submit" value="Lista de Médicos" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z areaRegistrar">
                     <form action="formularioRegistrarMedico.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonRegistrar" type="submit" value="Registrar Médico" >
                     </form>  
                 </li>
@@ -107,7 +107,6 @@
       if($dniPacBorrar != null and $dniPacBorrar != "SinPaciente"){
         
         $collection4 = $mongo->ScAid->Patients;
-        print_r($dniPacBorrar);
         $updateResult = $collection4->updateOne(
           [ 'DNI' => $dniPacBorrar ],
           [ '$set' => [ 'Doctor_DNI' => '-1' ]]);
@@ -117,7 +116,7 @@
         $collection5 = $mongo->ScAid->Patients;
         $updateResult = $collection5->updateOne(
           [ 'DNI' => $dniPacCrear ],
-          [ '$set' => [ 'Doctor_DNI' => $idMedico ]]);
+          [ '$set' => [ 'Doctor_DNI' => $idMedico]]);
       }
       
 
@@ -127,7 +126,7 @@
     <h1>Listado de médicos </h1>
 
     <form action="formularioRegistrarMedico.php" method = "post">
-      <input type="hidden" name="medicoDNI" value= <?php $dniMedico?>>
+      <input type="hidden" name="medicoDNI" value= <?php echo $dniMed?>>
       <input class = "botonCrearMed" type="submit" value="Nuevo médico" />
     </form>
     

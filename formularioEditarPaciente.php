@@ -4,7 +4,7 @@
     require 'vendor/autoload.php';
 
     $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
-    $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
+    $dniMed = isset($_POST['medicoDNI']) ? $_POST['medicoDNI'] : null;
     use MongoDB\Client as Mongo;
 
     // determinar donde estamos buscando
@@ -158,7 +158,7 @@
             <ul>
                 <li class="gwd-p-gv4z">
                     <form action="listaPacientesMedico.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed; ?>>
                             <input class = "botonListaPacientes" type="submit" value="Lista de Pacientes" >
                     </form>  
                 </li>
@@ -173,7 +173,7 @@
         </nav>
 
         <div class="div_medico">
-            <h1> Formulario para Introducir datos de Paciente  </h1>
+            <h1> Formulario para Introducir datos de Paciente </h1>
             <br>  </br>
             <form method="POST" name = "formSeguimiento"  id = "pruebaForm">
                 <table class="tabla_medico">

@@ -67,7 +67,7 @@ $mongo = new Mongo($clara);
                         if($medico[0]['Head_department_DNI'] == $dni){
                             //Dirigir al área de médico-jefe
                             echo "<form name = 'envia2' method = 'POST' action = 'seleccionarRol.php'>
-                            <input type = hidden name = dniMed value = ".$dni.">
+                            <input type = hidden name = medicoDNI value = ".$dni.">
                             </form>
                             <script language = 'Javascript'>
                             document.envia2.submit()
@@ -76,7 +76,7 @@ $mongo = new Mongo($clara);
                         else{
                             //Dirigir al área de médico
                             echo "<form name = 'envia3' method = 'POST' action = 'listaPacientesMedico.php'>
-                            <input type = hidden name = dniMed value = ".$dni.">
+                            <input type = hidden name = medicoDNI value = ".$dni.">
                             </form>
                             <script language = 'Javascript'>
                             document.envia3.submit()

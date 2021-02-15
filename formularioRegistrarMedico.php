@@ -4,6 +4,7 @@ $lucia = "mongodb+srv://luciavm:sscdrsnshsm@cluster0.wnp1l.mongodb.net/test?auth
 require 'vendor/autoload.php'; // incluir lo bueno de Composer
 use MongoDB\Client as Mongo;
 $mongo = new Mongo($lucia);
+$dniMed = isset($_POST['medicoDNI']) ? $_POST['medicoDNI'] : null;
 ?>
 
 <html>
@@ -123,19 +124,19 @@ $mongo = new Mongo($lucia);
     <ul>      
                 <li class="gwd-p-gv4z areaListaPac">
                     <form action="seleccionarRol.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonListaPacientes" type="submit" value="Seleccionar Rol" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z areaMedicos" >
                     <form action="listaMedicosMedicoJefe.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonMedicos" type="submit" value="Lista de Médicos" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z areaRegistrar">
                     <form action="formularioRegistrarMedico.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonRegistrar" type="submit" value="Registrar Médico" >
                     </form>  
                 </li>
@@ -201,6 +202,7 @@ $mongo = new Mongo($lucia);
                     </tr>
                     <tr>
                         <td id = "filaBotonesRespuesta" colspan="2">
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonEscribirRespuesta" type="submit" name="enviar" onclick = "return validaForm();">
                             <input type="reset" class = "botonEscribirRespuesta" name="borrar">
                         </td>

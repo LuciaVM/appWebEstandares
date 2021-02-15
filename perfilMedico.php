@@ -6,9 +6,8 @@
     use MongoDB\Client as Mongo;
     $mongo = new Mongo($clara);
 
-    // $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
+    $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
 
-    $dniMed = "28865083-d";
     
     $collectionMedicos = $mongo->ScAid->Doctors;
     $medico = $collectionMedicos->find(['DNI' => $dniMed])->toArray();

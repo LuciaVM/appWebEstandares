@@ -1,5 +1,5 @@
 <?php
-
+$dniMed = isset($_POST['medicoDNI']) ? $_POST['medicoDNI'] : null;
 ?>
 <!DOCTYPE html>
 
@@ -15,15 +15,22 @@
     function rolSeleccionado(){
       rol = document.formulario.rol.value;
       if (rol == "MedicoJefe"){
-        window.location.href='listaMedicosMedicoJefe.php?idMed=<?php echo $idMed?>';
+        document.envia.submit();
       } else if (rol == "Medico"){
-        window.location.href='listaConsultasMedico.php?idMed=<?php echo $idMed?>';
+        document.envia2.submit();
       }
     }
   </script>
 </head>
 
+
 <body class="htmlNoPages">
+<form name = 'envia' method = 'POST' action = 'listaMedicosMedicoJefe.php'>
+<input type = hidden name = medicoDNI value = <?php echo $dniMed?>>
+</form>
+<form name = 'envia2' method = 'POST' action = 'listaPacientesMedico.php'>
+<input type = hidden name = medicoDNI value = <?php echo $dniMed?>>
+</form>
 <div class="gwd-div-lm07"></div>
   <img src="assets/logo.png" class="gwd-img-fa6j">
   <h4 class = "area" >Área de médico administrador</h4>
@@ -31,25 +38,25 @@
     <ul>      
                 <li class="gwd-p-gv4z areaListaPac">
                     <form action="seleccionarRol.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonListaPacientes" type="submit" value="Seleccionar Rol" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z areaMedicos" >
                     <form action="listaMedicosMedicoJefe.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonMedicos" type="submit" value="Lista de Médicos" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z areaRegistrar">
                     <form action="formularioRegistrarMedico.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonRegistrar" type="submit" value="Registrar Médico" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z areaSalir">
                     <form action="login.php" method = "post">
-                            <!-- <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <!-- <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input type="hidden" name="dniPac" value= <?php $seguimiento['Patient_DNI'] ?>> -->
                             <input class = "botonSalir" type="submit" value="Salir" >
                     </form>   
@@ -72,7 +79,7 @@
           </tr>
           <tr>
             <td id = 'filaBoton' colspan="2">
-              <input type="button" id = "botonRol" name="enviar" value="Seleccionar" onclick="return rolSeleccionado();">
+              <input type="button" id = "botonRol" name="enviarSelectRol" value="Seleccionar" onclick=rolSeleccionado();>
               <!-- meter login para volver -->
             </td>
           </tr>

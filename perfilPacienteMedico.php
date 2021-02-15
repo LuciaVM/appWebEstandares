@@ -5,7 +5,7 @@
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($lucia);
 
-  $dniMed = isset($_POST['dniMedico']) ? $_POST['dniMedico'] : null;
+  $dniMed = isset($_POST['medicoDNI']) ? $_POST['medicoDNI'] : null;
   $dniPac =  isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
 ?>
 
@@ -86,7 +86,7 @@
             <ul>
                 <li class="gwd-p-gv4z">
                     <form action="listaPacientesMedico.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed; ?>>
                             <input class = "botonListaPacientes" type="submit" value="Lista de Pacientes" >
                     </form>  
                 </li>

@@ -5,7 +5,6 @@
   $mongo = new Mongo($lucia);
   
   $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
-  $dniPac = "54564359-w";
 
 ?>
 <!DOCTYPE html>
