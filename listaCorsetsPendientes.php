@@ -41,9 +41,24 @@
         <h4 class = "area" >Área de técnico</h4>
         <nav id="menu-superior">
             <ul>
-                <li li class="gwd-p-gv4z"><a href="perfilTecnico.php?idMed=<?php echo $idMed?>">Mi Perfil</h3></a></li>
-                <li class="gwd-p-gv4z gwd-li-yj6f"><a href="listaCorsetsPendientes.php?idMed=<?php echo $idMed?>">Corsets Pendientes</a></li>
-                <li class="gwd-p-gv4z gwd-p-5vs1"><a href="login.php">Salir</a></li>
+                <li class="gwd-p-gv4z">
+                    <form action="perfilTecnico.php" method = "post">
+                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input class = "botonListaPacientes" type="submit" value="Mi Perfil" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z gwd-li-yj6f">
+                    <form action="listaCorsetsPendientes.php" method = "post">
+                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input class = "botonRegistrar" type="submit" value="Corsets Pendientes" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z salir">
+                    <form action="login.php" method = "post">
+                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input class = "botonSalir" type="submit" value="Salir" >
+                    </form>  
+                </li>
             </ul>
         </nav>
 </body>
@@ -64,6 +79,8 @@
                   foreach($patients  as $patient){
                     if($brace['Patient_DNI'] == $patient['DNI']){
                       $p=$patient;
+                      $braceId = $brace['_id'];
+                      // echo $braceId;
                     }
                   }
                 
@@ -72,7 +89,9 @@
                            <td><?php echo $p['Name'] ?></td>
                             <td><?php echo $p['Surname'] ?></td>
                             <td>
-                              <form action="POST">
+                              <form action="formularioCorset.php" method="POST">
+                                <input type="hidden" name="dniTec" value= <?php echo $dniTec ?>>
+                                <input type="hidden" name="idCorset" value= <?php echo $braceId ?>>
                                 <input class = "botonDetalles" type="submit" value="Completar" />
                               </form>
                             </td> 
