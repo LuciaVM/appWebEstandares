@@ -61,21 +61,53 @@ body {
   text-decoration: none;
 }
 
+.botonListaPacientes{ 
+  font-weight: bold;
+  font-size: 12pt;
+  color: #f3faed;
+  width: 180px;
+  height: 38px;
+  background-color: #e13c44;
+}
 .gwd-p-1qhn {
   width: 220px;
   right: 305px;
+}
+.botonMedicos{ 
+  font-weight: bold;
+  font-size: 12pt;
+  color: #f3faed;
+  width: 220px;
+  height: 38px;
+  background-color: #e13c44;
 }
 
 .gwd-p-5vs1 {
   width: 165px;
   right: 120px;
 }
+.botonRegistrar{ 
+  font-weight: bold;
+  font-size: 12pt;
+  color: #f3faed;
+  width: 165px;
+  height: 38px;
+  background-color: #e13c44;
+}
 .salir{
   transform-origin: 50% 50% 0px;
   width: 80px;
   right: 20px;
 }
-
+.botonSalir{ 
+  font-weight: bold;
+  font-size: 12pt;
+  color: #f3faed;
+  width: 80px;
+  height: 38px;
+  right: 20px;
+  background-color: #e13c44;
+}
 .area{
   position: absolute;
   height: 20em;
@@ -220,7 +252,6 @@ nav#menu-superior ul li a {
   font-weight: bold;
   font-size:15px;
 }
-
 #contenedor { 
   margin: 0 auto; 
   width: 80%; 
