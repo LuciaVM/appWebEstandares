@@ -8,7 +8,6 @@
 
     $dniTec = isset($_POST['dniTec']) ? $_POST['dniTec'] : null;
 
-    $dniTec = "45478596-H";
     
     $collectionTecnicians = $mongo->ScAid->Tecnicians;
     $tecnico = $collectionTecnicians->find(['DNI' => $dniTec])->toArray();
@@ -29,13 +28,13 @@
             <ul>
                 <li class="gwd-p-gv4z">
                     <form action="perfilTecnico.php" method = "post">
-                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input type="hidden" name="dniTec" value= <?php echo $dniTec ?>>
                             <input class = "botonListaPacientes" type="submit" value="Mi Perfil" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z gwd-li-yj6f">
                     <form action="listaCorsetsPendientes.php" method = "post">
-                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input type="hidden" name="dniTec" value= <?php echo $dniTec ?>>
                             <input class = "botonRegistrar" type="submit" value="Corsets Pendientes" >
                     </form>  
                 </li>

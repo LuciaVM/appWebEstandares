@@ -4,9 +4,8 @@
   $clara = "mongodb+srv://clarajv:zZVQaRtyyRJad99k@cluster0.wnp1l.mongodb.net/test?authSource=admin&replicaSet=atlas-mwie0e-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
   require 'vendor/autoload.php'; // incluir lo bueno de Composer
 
-    // $dniTec = isset($_POST['dniTec']) ? $_POST['dniTec'] : null;
-    
-  $dniTec = "45478596-H";
+  $dniTec = isset($_POST['dniTec']) ? $_POST['dniTec'] : null;
+  
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($clara);
   
@@ -43,13 +42,13 @@
             <ul>
                 <li class="gwd-p-gv4z">
                     <form action="perfilTecnico.php" method = "post">
-                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input type="hidden" name="dniTec" value= <?php echo $dniTec ?>>
                             <input class = "botonListaPacientes" type="submit" value="Mi Perfil" >
                     </form>  
                 </li>
                 <li class="gwd-p-gv4z gwd-li-yj6f">
                     <form action="listaCorsetsPendientes.php" method = "post">
-                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input type="hidden" name="dniTec" value= <?php echo $dniTec ?>>
                             <input class = "botonRegistrar" type="submit" value="Corsets Pendientes" >
                     </form>  
                 </li>
@@ -75,6 +74,7 @@
                 <th>Completar</th>
               </tr>
               <?php 
+              $p = null;
                 foreach($braces as $brace){
                   foreach($patients  as $patient){
                     if($brace['Patient_DNI'] == $patient['DNI']){
@@ -82,22 +82,21 @@
                       $braceId = $brace['_id'];
                       // echo $braceId;
                     }
-                  }
-                
-                    ?>
-                        <tr>
-                           <td><?php echo $p['Name'] ?></td>
-                            <td><?php echo $p['Surname'] ?></td>
+                  }if($p != null){
+                    echo' 
+                    <tr>
+                           <td> '.$p['Name'].'</td>
+                            <td> '.$p['Surname'].' </td>
                             <td>
                               <form action="formularioCorset.php" method="POST">
-                                <input type="hidden" name="dniTec" value= <?php echo $dniTec ?>>
-                                <input type="hidden" name="idCorset" value= <?php echo $braceId ?>>
+                                <input type="hidden" name="dniTec" value= '.$dniTec.' >
+                                <input type="hidden" name="idCorset" value=  '.$braceId.' >
                                 <input class = "botonDetalles" type="submit" value="Completar" />
                               </form>
                             </td> 
                             <!-- no se como poner el enlace todavia -->
-                        </tr>
-                    <?php
+                        </tr>';
+                  }
                 }
               ?>
               <tr>

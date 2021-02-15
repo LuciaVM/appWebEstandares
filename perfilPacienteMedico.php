@@ -166,8 +166,8 @@
             <tr> 
                  <td id = "filaBotonesCrearPac" colspan = "2"> 
                      <form action="formularioEditarPaciente.php" method = "post"> 
-                         <input type="hidden" name="dniMed" value= <?php $dniMed?> 
-                         <input type="hidden" name="idPac" value= <?php $dniPac ?> 
+                         <input type="hidden" name="dniMed" value= <?php echo $dniMed?> 
+                         <input type="hidden" name="idPac" value= <?php echo $dniPac ?> 
                          <input class = "botonEditarPaciente" type="submit" value="Editar datos del paciente" />
                      </form>
                  </td>
@@ -293,6 +293,16 @@
                if(count($result) == 0){
                 echo '<tr><td colspan = "4">No hay resultados</td></tr>';
                }
+
+               echo '<tr> 
+                 <td id = "filaBotonesCrearPac" colspan = "2"> 
+                     <form action="formularioTratamiento.php" method = "post"> 
+                         <input type="hidden" name="dniMed" value=  '.$dniMed.' > 
+                         <input type="hidden" name="idPac" value= '.$dniPac.'> 
+                         <input class = "botonEditarPaciente" type="submit" value="Crear un nuevo tratamiento" />
+                     </form>
+                 </td>
+            </tr>';
 
                ?>
 

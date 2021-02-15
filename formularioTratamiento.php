@@ -3,8 +3,8 @@
     $clara = "mongodb+srv://clarajv:zZVQaRtyyRJad99k@cluster0.wnp1l.mongodb.net/test?authSource=admin&replicaSet=atlas-mwie0e-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
     require 'vendor/autoload.php';
 
-    // $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
-    $dniPac = "10708168-S";
+    $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
+    $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
     use MongoDB\Client as Mongo;
 
     // determinar donde estamos buscando
@@ -46,7 +46,7 @@
             <ul>
                 <li class="gwd-p-gv4z">
                     <form action="listaPacientesMedico.php" method = "post">
-                            <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input class = "botonListaPacientes" type="submit" value="Lista de Pacientes" >
                     </form>  
                 </li>
@@ -61,7 +61,7 @@
         </nav>
 
         <div class="div_medico">
-            <h1> Formulario para Introducir los Datos de un Tratamiento  </h1>
+            <h1> Formulario para Introducir los Datos de un Tratamiento </h1>
             <br>  </br>
             <form method="POST" name = "formSeguimiento" id = "pruebaForm">
                 <table class="tabla_medico">
@@ -86,6 +86,7 @@
                     </tr>
                     <tr>
                         <td colspan="2" id = "filaBotonesForm">
+                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
                             <input type="submit" class = "botonForm" name="enviarTratamiento" onclick = "return validaTratamiento();"> 
                             <input type="reset" class = "botonForm" name="borrar">
                         </td>
@@ -138,7 +139,7 @@
                                 )
                                 ] );
                         }
-                        echo "Inserted with Object ID '{$resultado->getInsertedId()}'"; //quitar cuando se termine
+                        //echo "Inserted with Object ID '{$resultado->getInsertedId()}'"; //quitar cuando se termine
                     }
                 ?>
             </form>
