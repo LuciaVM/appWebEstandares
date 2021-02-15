@@ -4,7 +4,8 @@
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($lucia);
 
-  $dniPac = "10708168-S"; 
+  $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
+  // $dniPac = "10708168-S"; 
 ?>
 <!DOCTYPE html>
 
@@ -25,10 +26,31 @@
   <h4 class = "area" >Área de paciente</h4>
   <nav id="menu-superior">
     <ul>
-      <li class="gwd-p-gv4z"><a href="listaConsultasPaciente.php?id=<?php echo $IDPaciente?>">Mis tratamientos</a></li>
-      <li class="gwd-p-gv4z gwd-p-1qhn"><a href="hacerConsulta.php?IDPaciente=<?php echo $IDPaciente?>">Mis seguimientos diarios</a></li>
-      <li class="gwd-p-gv4z gwd-p-5vs1"><a href="perfilPaciente.php?id=<?php echo $IDPaciente?>"><id="PerfilPaciente">Datos personales</a></li>
-      <li class="gwd-p-gv4z salir"><a href="login.php">Salir</a></li> 
+        <li class="gwd-p-gv4z">
+                    <form action="listaTratamientosPaciente.php" method = "post">
+                            <input type="hidden" name="dniPac" value= <?php echo $dniPac?>>
+                            <input class = "botonListaPacientes" type="submit" value="Mis tratamientos" >
+                    </form>  
+        </li>
+        
+        <li class="gwd-p-gv4z gwd-p-1qhn">
+                    <form action="listaSeguimientosPaciente.php" method = "post">
+                            <input type="hidden" name="dniPac" value= <?php echo $dniPac?>>
+                            <input class = "botonMedicos" type="submit" value="Mis seguimientos diarios" >
+                    </form>  
+        </li>
+        <li class="gwd-p-gv4z gwd-p-5vs1">
+                    <form action="perfilPacientePaciente.php" method = "post">
+                            <input type="hidden" name="dniPac" value= <?php echo $dniPac?>>
+                            <input class = "botonRegistrar" type="submit" value="Datos personales" >
+                    </form>  
+        </li>
+        <li class="gwd-p-gv4z salir">
+                    <form action="login.php" method = "post">
+                            <input type="hidden" name="dniPac" value= <?php echo $dniPac?>>
+                            <input class = "botonSalir" type="submit" value="Salir" >
+                    </form>   
+        </li>
     </ul>
   </nav>
  
