@@ -3,10 +3,9 @@
   require 'vendor/autoload.php';
   use MongoDB\Client as Mongo;
   $mongo = new Mongo($lucia);
-  $idTreatment = isset($_POST['idTret']) ? $_POST['idTret'] : null;
+  $idTreatment = isset($_POST['idTreatment']) ? $_POST['idTreatment'] : null;
   $dniMed = isset($_POST['dniMed']) ? $_POST['dniMed'] : null;
-
-
+  
 ?>
 <!DOCTYPE html>
 
@@ -34,8 +33,6 @@
                 </li>
                 <li class="gwd-p-gv4z gwd-p-5vs1">
                     <form action="login.php" method = "post">
-                            <!-- <input type="hidden" name="medicoDNI" value= <?php $dniMed ?>>
-                            <input type="hidden" name="dniPac" value= <?php $seguimiento['Patient_DNI'] ?>> -->
                             <input class = "botonSalir" type="submit" value="Salir" >
                     </form>   
                 </li>

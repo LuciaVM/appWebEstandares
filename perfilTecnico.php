@@ -6,7 +6,7 @@
     use MongoDB\Client as Mongo;
     $mongo = new Mongo($clara);
 
-    // $dniTec = isset($_POST['dniTec']) ? $_POST['dniTec'] : null;
+    $dniTec = isset($_POST['dniTec']) ? $_POST['dniTec'] : null;
 
     $dniTec = "45478596-H";
     
@@ -27,14 +27,29 @@
         <h4 class = "area" >Área de técnico</h4>
         <nav id="menu-superior">
             <ul>
-                <li li class="gwd-p-gv4z"><a href="perfilTecnico.php?idMed=<?php echo $idMed?>">Mi Perfil</h3></a></li>
-                <li class="gwd-p-gv4z gwd-li-yj6f"><a href="listaCorsetsPendientes.php?idMed=<?php echo $idMed?>">Corsets Pendientes</a></li>
-                <li class="gwd-p-gv4z gwd-p-5vs1"><a href="login.php">Salir</a></li>
+                <li class="gwd-p-gv4z">
+                    <form action="perfilTecnico.php" method = "post">
+                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input class = "botonListaPacientes" type="submit" value="Mi Perfil" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z gwd-li-yj6f">
+                    <form action="listaCorsetsPendientes.php" method = "post">
+                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input class = "botonRegistrar" type="submit" value="Corsets Pendientes" >
+                    </form>  
+                </li>
+                <li class="gwd-p-gv4z salir">
+                    <form action="login.php" method = "post">
+                            <input type="hidden" name="dniTec" value= <?php $dniTec ?>>
+                            <input class = "botonSalir" type="submit" value="Salir" >
+                    </form>  
+                </li>
             </ul>
         </nav>
 
         <div class="div_medico">
-            <h1> Perfil del Médico </h1>
+            <h1> Perfil del Técnico </h1>
             <br>  </br>
             <table class = "tablaPerfilSeguimiento">
                 <tbody>
