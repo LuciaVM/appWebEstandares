@@ -1,0 +1,122 @@
+p {
+    margin: 0px;
+  }
+  h1 {
+    margin: 0px;
+  }
+  h2 {
+    margin: 0px;
+  }
+  h3 {
+    margin: 0px;
+  }
+  html, body {
+    background-color: #abdbdb;
+    
+  }
+
+  .gwd-img-98vu {
+    position: absolute;
+    width: 300px;
+    height: 286px;
+    transform-origin: 152.333px 127.733px 0px;
+    left: 45px;
+    top: 210px;
+  }
+  .gwd-rect-rshb {
+    position: absolute;
+    top: 0px;
+    box-sizing: border-box;
+    border-width: 0px;
+    border-style: solid;
+    border-color:  #1d3556;
+    background-image: none;
+    background-color: #1d3556;
+    left: 0px;
+    width: 430px;
+    transform-origin: 50% 50% 0px;
+    height: 900px;
+  }
+  .gwd-span-6t34 {
+    position: absolute;
+    font-size: 50px;
+    font-weight: bold;
+    width: 269px;
+    height: 58px;
+    transform-origin: 50% 50% 0px;
+    color: #f3faed;
+    left: 68px;
+    top: 95px;
+  }
+  
+  .gwd-span-l0dx {
+    position: absolute;
+    font-weight: bold;
+    color: #1d3556;
+    font-size: 35px;
+    width: 300px;
+    height: 39px;
+    transform-origin: 50% 50% 0px;
+    left: 456px;
+    top: 88px;
+  }
+  .gwd-input-1nfr {
+    position: absolute;
+    height: 20px;
+    width: 150px;
+    transform-origin: 50% 50% 0px;
+    top: 182px;
+    left: 570px;
+  }
+  .gwd-span-1ogd {
+    position: absolute;
+    font-weight: bold;
+    color: #1d3556;
+    width: 188px;
+    transform-origin: 50% 50% 0px;
+    font-size: 20px;
+    height: 26px;
+    left: 440px;
+    top: 182px;
+  }
+  .gwd-span-1anj {
+    position: absolute;
+    font-weight: bold;
+    color: #1d3556;
+    height: 29px;
+    transform-origin: 50% 50% 0px;
+    width: 132px;
+    font-size: 20px;
+    left: 424px;
+    top: 230px;
+  }
+  .gwd-input-182e {
+    position: absolute;
+    left: 570px;
+    top: 232px;
+    height: 20px;
+    width: 150px;
+    transform-origin: 50% 50% 0px;
+  }
+  .gwd-button-f41u {
+    position: absolute;
+    background-color: #e13c44;
+    top: 300px;
+    width: 100px;
+    height: 24px;
+    left: 506px;
+    color:white;
+    border-radius: 6px;
+    border-color: #e13c44;
+  }
+  .gwd-button-f41u:hover{
+    background-color: #447c9b;
+    border-color: #447c9b;
+  }
+  .login {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: 20%;
+    top: 40px;
+  }
