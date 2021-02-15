@@ -79,14 +79,15 @@
                             <option value="Corsé">Corsé</option>
                         </select></td>
                     </tr>
-                    <tr><td><pre><b>Descripción   </b></pre></td>
+                    <tr><td><pre><b>Descripción    </b></pre></td>
                         <td>
                             <textarea id="desc" name="desc" rows="4" cols="50" autocapitalize="sentences" placeholder="Escriba la descripción"></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2" id = "filaBotonesForm">
-                            <input type="hidden" name="medicoDNI" value= <?php echo $dniMed ?>>
+                            <input type="hidden" name="dniMed" value= <?php echo $dniMed ?>>
+                            <input type="hidden" name="dniPac" value= <?php echo $dniPac ?>>
                             <input type="submit" class = "botonForm" name="enviarTratamiento" onclick = "return validaTratamiento();"> 
                             <input type="reset" class = "botonForm" name="borrar">
                         </td>
@@ -97,6 +98,8 @@
                         $numTratamientos = count($collectionTreatments->find()->toArray());
                         $idTrataminento=$numTratamientos + 1;
                         $fechaIni = isset($_POST['fechaIni']) ? $_POST['fechaIni'] : null;
+                        $dniPac = isset($_POST['dniPac']) ? $_POST['dniPac'] : null;
+
                         if($_POST['fechaFin']!=NULL){
                             $fechaFin = $_POST['fechaFin'];
                         } else {
@@ -139,7 +142,7 @@
                                 )
                                 ] );
                         }
-                        //echo "Inserted with Object ID '{$resultado->getInsertedId()}'"; //quitar cuando se termine
+                        // echo "Inserted with Object ID '{$resultado->getInsertedId()}'"; //quitar cuando se termine
                     }
                 ?>
             </form>
